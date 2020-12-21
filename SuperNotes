@@ -1,0 +1,27 @@
+Note cho bài tập Module 3
+-trong trang jsp, dat name cua cac element trung` nhau, trong java hoac servlet se co phuong thuc request.getParameterValues("name") tra ve 1 mang cac gia tri co name="name";
+-copy 2 thu vien trong student: mail, javax.activation (bÃ i 3.7)
+-lÃ m 3.6.
+- phai co thu vien jakarta.activation-1.2.1.jar moi gui duoc mail khi lam o nha.
+- Bai tap upload: vi upload len ...../views/upload/* nen trong index.jsp phai de link hinh anh la src="${pageContext.request.contextPath}/views/upload/${img}".
+Note cho bài 4,9,10 quản lý bán sữa
+-Phải có Class.forName(“…Driver”) mới chạy servlet, đọc database được
+Note cho bài 08M3:
+-Mở trang thong-tin-khach-hang.jsp thì xóa được ở server và frontent, chỉ xuất hiện nội dung của custom tag ml1:bangTTKH;
+-Mở trang Vd1.jsp thì ko thể xóa cả front end và back end (Vd1.jsp->doPost Vd1Servlet -> KhachHangServlet -> thong-tin-khach-hang.jsp). Phải truyền tham số là id vào xoaKH(id) mới xóa được, maKH ko xóa được. Mở trang Vd1 thì thực hiện JavaScript của trang Vd1 và không thực hiện JavaScript của trang thong-tin-khach-hang.jsp;
+Note cho MinishopMVC
+-Ôn lại Hibernate để làm:
+oPublic class CSDL{
+Private static SessionFactory factory;
+Static { factory = new Configuration().configure().buildSessionFactory();}
+Public static SessionFactory getSessionFactory () {	 return factory;}
+oPublic class PublisherBL{ 
+Public List<Publisher> docPublisher(){
+List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery(“ Select publisher from Publisher publisher”).getResultList()/list();
+Return dsPublisher;}
+
+
+*** Làm bài 4.2, 4.3, 4.4 module 3
+Note cho bài 4 module 3:
+-Làm xong trang index.jsp, add.jsp, làm tiếp phần link edit, delete publisher.
+-Trong hibernate, chỉ insert những giá trị được select từ database vào database.
