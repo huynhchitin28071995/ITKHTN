@@ -15,22 +15,24 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploadController {
 	@RequestMapping("/upload-file")
 	public String upLoadFile() {
-		return "uploadFile"; //ten dinh nghia trong tiles.xml
+		return "uploadFile"; // ten dinh nghia trong tiles.xml
 	}
+
 	@RequestMapping(path = "/upload-file", method = RequestMethod.POST)
 	public String upLoadFile(MultipartFile[] tt, HttpServletRequest request) {
 		String path = request.getServletContext().getRealPath("/upload/");
-		for(MultipartFile mf:tt) {
+		System.out.println(path);
+		for (MultipartFile mf : tt) {
 			String fileName = mf.getOriginalFilename();
 			try {
 				byte[] mb = mf.getBytes();
-				OutputStream os = new FileOutputStream(path+fileName);
+				OutputStream os = new FileOutputStream(path + fileName);
 				os.write(mb);
 				os.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		return "uploadFile"; //ten dinh nghia trong tiles.xml
+		return "uploadFile"; // ten dinh nghia trong tiles.xml
 	}
 }
