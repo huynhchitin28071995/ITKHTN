@@ -18,21 +18,43 @@ public class UploadController {
 		return "uploadFile"; // ten dinh nghia trong tiles.xml
 	}
 
+//	@RequestMapping(path = "/upload-file", method = RequestMethod.POST)
+//	public String upLoadFile(MultipartFile[] tt, HttpServletRequest request) {
+//		String path = request.getServletContext().getRealPath("/upload/");
+//		System.out.println(path);
+//		for (MultipartFile mf : tt) {
+//			String fileName = mf.getOriginalFilename();
+//			System.out.println(fileName);
+//			try {
+//				byte[] mb = mf.getBytes();
+//				OutputStream os = new FileOutputStream(path + fileName);
+//				os.write(mb);
+//				os.close();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return "uploadFile"; // ten dinh nghia trong tiles.xml
+//	}
+
 	@RequestMapping(path = "/upload-file", method = RequestMethod.POST)
-	public String upLoadFile(MultipartFile[] tt, HttpServletRequest request) {
+	public String uploadFile(MultipartFile[] files, HttpServletRequest request) {
 		String path = request.getServletContext().getRealPath("/upload/");
 		System.out.println(path);
-		for (MultipartFile mf : tt) {
+		for (MultipartFile mf : files) {
 			String fileName = mf.getOriginalFilename();
+			System.out.println(fileName);
 			try {
 				byte[] mb = mf.getBytes();
-				OutputStream os = new FileOutputStream(path + fileName);
-				os.write(mb);
-				os.close();
+				OutputStream fos = new FileOutputStream(path + fileName);
+
+				fos.write(mb);
+				fos.close();
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		return "uploadFile"; // ten dinh nghia trong tiles.xml
+		return "uploadFile";
 	}
 }
