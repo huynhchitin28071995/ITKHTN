@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Default Main Template -->
+    <definition name="mau01" template="/WEB-INF/templates/trang-mau-1.jsp">
+        <put-attribute name="tieuDe" value="Trang mau" type="string" />
+        <put-attribute name="dauTrang" value="/WEB-INF/templates/dau-trang.jsp" />
+        <put-attribute name="thucDon" value="/WEB-INF/templates/thuc-don.jsp" />
+        <put-attribute name="noiDung" value="" />
+        <put-attribute name="cuoiTrang" value="/WEB-INF/templates/cuoi-trang.jsp" />
+    </definition>
+ 
+    <definition name="home" extends="mau01">
+        <put-attribute name="noiDung" value="/WEB-INF/views/chao.jsp" />
+    </definition>
+    
+    <definition name="themLoaiSua" extends="mau01">
+        <put-attribute name="tieuDe" value="Thêm loại sữa" type="string" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/them-loai-sua.jsp" />
+    </definition>
+
+    <definition name="danhSachLoaiSua" extends="mau01">
+        <put-attribute name="tieuDe" value="Tìm loại sữa" type="string" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/tim-loai-sua.jsp" />
+    </definition>
+    
+    <definition name="uploadFile" extends="mau01">
+        <put-attribute name="tieuDe" value="Upload file" type="string" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/upload-file.jsp" />
+    </definition>
+    <definition name="sendMail" extends="mau01">
+        <put-attribute name="tieuDe" value="Send mail" type="string" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/send-mail.jsp" />
+    </definition>
+</tiles-definitions>

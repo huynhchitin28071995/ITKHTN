@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+	<mvc:annotation-driven/>
+	<context:component-scan base-package="controllers"/>
+	
+	<mvc:resources location="/css/" mapping="/css/*"/>
+	<mvc:resources location="/js/" mapping="/js/*"/>
+	<mvc:resources location="/images/" mapping="/images/*"/>
+	
+<!-- 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!-- 		<property name="prefix" value="/WEB-INF/views/"/> -->
+<!-- 		<property name="suffix" value=".jsp"/> -->
+<!-- 	</bean> -->
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+	</bean>
+	
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	    <property name="host" value="smtp.gmail.com" />
+	    <property name="port" value="465" />
+	    <property name="username" value="finance2k16@gmail.com"/>
+	    <property name="password" value="f!n@ce2k!6"/>
+	    <property name="javaMailProperties">
+	    	<props>
+	        	<prop key="mail.smtp.auth">true</prop>  
+	         		<prop key="mail.smtp.socketFactory.port">465</prop>  
+	         		<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>  
+	         		<prop key="mail.smtp.port">587</prop>  
+	            <prop key="mail.transport.protocol">smtp</prop>
+	            <prop key="mail.smtp.starttls.enable">true</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+</beans>
