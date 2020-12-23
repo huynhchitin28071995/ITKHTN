@@ -1,23 +1,54 @@
 package controllers;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import businessLogics.AuthorBL;
+import javaBeans.Author;
 
 @Controller
 @RequestMapping("/author")
 public class AuthorController {
-@RequestMapping("/xem")
-public String author(Model model) {
-	model.addAttribute("dsAuthor", AuthorBL.docTatCa());
-	return "author";
-}
-@RequestMapping("/them")
-public String them(HttpServletRequest request) {
-	return "add-author";
-}
+	@RequestMapping("/xem")
+	public String author(Model model) {
+		model.addAttribute("dsAuthor", AuthorBL.docTatCa());
+		return "author";
+	}
+
+	@RequestMapping("/them")
+	public String them() {
+		return "add-author";
+	}
+
+	@RequestMapping(path = "/them", method = RequestMethod.POST)
+	public String them(Author author, Model model) {
+		model.addAttribute("msg", "Đã thêm author");
+		AuthorBL.them(author);
+		return "add-author";
+	}
+
+	@RequestMapping("/delete")
+	public String xoa(@RequestParam(name = "authorId") int authorId) {
+		AuthorBL.xoa(authorId);
+		return "redirect:/author/xem";
+	}
+
+	@RequestMapping("/edit/{authorId}")
+	public String sua(@PathVariable(name = "authorId") int authorId, Model model) {
+		model.addAttribute("authorId", authorId);
+		model.addAttribute("authorName", AuthorBL.docTheoId(authorId).getAuthorName());
+		return "edit-author";
+	}
+
+	@RequestMapping(path = "/edit/{authorId}", method = RequestMethod.POST)
+	public String suaPost(Author author, Model model) {
+		AuthorBL.sua(author.getAuthorId(), author.getAuthorName());
+		model.addAttribute("msg", "đã sửa author");
+		return "edit-author";
+	}
+
 }

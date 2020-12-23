@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-
-
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -13,6 +11,7 @@ import javaBeans.Author;
 
 public class AuthorBL {
 	static JdbcTemplate jdbc = CSDL.getJdbc();
+
 	public static List<Author> docTatCa() {
 		String sql = "SELECT * FROM author";
 		return jdbc.query(sql, new RowMapper<Author>() {
@@ -22,13 +21,14 @@ public class AuthorBL {
 				author.setAuthorId(rs.getInt("AuthorId"));
 				author.setAuthorName(rs.getString("AuthorName"));
 				return author;
-			}			
+			}
 		});
 	}
-	//Doc theo id
+
+	// Doc theo id
 	public static Author docTheoId(int id) {
 		String sql = "select * from author where AuthorId=?";
-		return jdbc.queryForObject(sql, new RowMapper<Author> (){
+		return jdbc.queryForObject(sql, new RowMapper<Author>() {
 			@Override
 			public Author mapRow(ResultSet rs, int numRow) throws SQLException {
 				Author author = new Author();
@@ -38,23 +38,31 @@ public class AuthorBL {
 			}
 		}, id);
 	}
-	
-	//Them author
+
+	// Them author
 	public static void them(Author author) {
 		String sql = "Insert into author(authorname) values(?)";
 		jdbc.update(sql, author.getAuthorName());
 	}
-	public static void xoa(Author author) {
+
+	public static void xoa(int authorId) {
 		String sql = "delete from author where AuthorId=?";
-		jdbc.update(sql, author.getAuthorId());
+		jdbc.update(sql, authorId);
 	}
+
+	public static void sua(int authorId, String authorName) {
+		String sql = "update Author set AuthorName=? where AuthorId=?";
+		jdbc.update(sql, authorName, authorId);
+	}
+
 	public static void main(String[] args) {
 		docTatCa().forEach(author -> System.out.println(author.getAuthorName()));
 		System.out.println(docTheoId(1).getAuthorName());
 		Author author = new Author();
 		author.setAuthorName("AAAAA");
-		author.setAuthorId(27);
-		//them(author);
-		xoa(author);
+		// author.setAuthorId(27);
+		for (int i = 0; i < 10; i++)
+			them(author);
+		// xoa(21);
 	}
 }
