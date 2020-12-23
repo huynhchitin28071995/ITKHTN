@@ -615,3 +615,9 @@ fieldset:disabled a.btn {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;
 }
+td{
+	border: solid 1px gray;
+}
+table{
+	border: solid 1px gray;
+}

@@ -16,8 +16,9 @@
 	</div>
 	<div class="sidebar">
 		<ul>
-			<li><a href="home.jsp">Home</a></li>
-			<li><a href="publisher.jsp">Publisher</a></li>
+			<li><a href="${pageContext.request.contextPath }/home">Home</a></li>
+			<li><a href="${pageContext.request.contextPath }/publisher">Publisher</a></li>
+			<li><a href="${pageContext.request.contextPath }/author/xem">Author</a>
 		</ul>
 	</div>
 	<div class="main">
