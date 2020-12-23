@@ -25,3 +25,16 @@ oPublic class PublisherBL{
 Note cho bài 4 module 3:
 -Làm xong trang index.jsp, add.jsp, làm tiếp phần link edit, delete publisher.
 -Trong hibernate, chỉ insert những giá trị được select từ database vào database.
+
+
+
+Note cho Bai03M4_Tiles
+- trong phần upload file (và kể cả những phần khác), đặt name trong html trùng với tên biến trong Controller.class sẽ tự tạo đối tượng có tên như vậy và truyền vào phương thức dưới dạng tham số. VD:
+          <p>Tập tin: <input type="file" multiple="multiple" name="files"></p>
+          public String uploadFile(MultipartFile[] files, HttpServletRequest request) {}
+          
+          
+ Note cho Bai MiniShopMVC:
+ Trang hien tai: MiniShopMVC/
+ - href="/them" -> localhost/them: goi truc tiep tu link
+ - href="them" -> truy cap lai MiniShopMVC, them /them vao = MiniShopMVC/them: goi tu trang (controller) hien tai -> click vao link nay lien tuc se khong return 1 ket qua
