@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+<definition name="mainTemplate" template="/WEB-INF/views/home.jsp">
+<put-attribute name="title" value="Trang mainTemplate" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/trang-chu.jsp" />
+</definition>
+<definition name="home" extends="mainTemplate">
+<put-attribute name="title" value="Trang Home" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/publisher.jsp"/>
+</definition>
+<definition name="author" extends="mainTemplate">
+<put-attribute name="title" value="Trang danh sách Author" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/author.jsp"/>
+</definition>
+<definition name="add-author" extends="mainTemplate">
+<put-attribute name="title" value="Trang danh sách Author" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/add-author.jsp"/>
+</definition>
+<definition name="edit-author" extends="mainTemplate">
+<put-attribute name="title" value="Trang danh sách Author" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/edit-author.jsp"/>
+</definition>
+</tiles-definitions>

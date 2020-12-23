@@ -1,5 +1,10 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +39,27 @@ public class AuthorController {
 	@RequestMapping("/delete")
 	public String xoa(@RequestParam(name = "authorId") int authorId) {
 		AuthorBL.xoa(authorId);
+		return "author";
+	}
+
+//	@RequestMapping(path = "/xoaNhieu", method = RequestMethod.POST)
+//	public String xoa(@RequestParam(name = "ids") List<Integer> ids) {
+//		if (ids != null)
+//			AuthorBL.xoa(ids);
+//		return "redirect:/author/xem";
+//
+//	}
+
+	@RequestMapping(path = "/xoaNhieu", method = RequestMethod.POST)
+	public String xoa(HttpServletRequest request) {
+		String[] ids = request.getParameterValues("ids");
+		if (ids != null) {
+			List<Integer> listId = new ArrayList<Integer>();
+			for (String id : ids) {
+				listId.add(Integer.parseInt(id));
+			}
+			AuthorBL.xoa(listId);
+		}
 		return "redirect:/author/xem";
 	}
 

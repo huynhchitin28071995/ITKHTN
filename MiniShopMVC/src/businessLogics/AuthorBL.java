@@ -50,6 +50,10 @@ public class AuthorBL {
 		jdbc.update(sql, authorId);
 	}
 
+	public static void xoa(List<Integer> list) {
+		list.forEach(id -> jdbc.update("delete from author where AuthorId=?", id));
+	}
+
 	public static void sua(int authorId, String authorName) {
 		String sql = "update Author set AuthorName=? where AuthorId=?";
 		jdbc.update(sql, authorName, authorId);
