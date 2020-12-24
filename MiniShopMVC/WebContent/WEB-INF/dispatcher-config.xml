@@ -27,5 +27,5 @@
 <context:component-scan base-package="controllers"/>
 <mvc:resources location="/css/" mapping="/css/*"/>
 <mvc:resources location="/js/" mapping="/js/*"/>
-<mvc:resources location="/image/" mapping="/image/*"/>
+<mvc:resources location="/images/" mapping="/images/*"/>
 </beans>
