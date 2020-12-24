@@ -69,4 +69,3 @@
 		href="${pageContext.request.contextPath }/product/xem/${tongSoTrang}">&#62;&#62;</a>
 	</li>
 </ul>
-<c:if test=""></c:if>
