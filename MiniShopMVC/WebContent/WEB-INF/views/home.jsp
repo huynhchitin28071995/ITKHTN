@@ -21,6 +21,9 @@
 			<li><a href="${pageContext.request.contextPath }/home">Home</a></li>
 			<li><a href="${pageContext.request.contextPath }/publisher">Publisher</a></li>
 			<li><a href="${pageContext.request.contextPath }/author/xem">Author</a>
+			<li><a href="${pageContext.request.contextPath }/category/category">Category</a>
+			<li><a href="${pageContext.request.contextPath }/category/add-category">Add-Category</a>
+			<li><a href="${pageContext.request.contextPath }/product/xem">Product</a>
 		</ul>
 	</div>
 	<div class="main">

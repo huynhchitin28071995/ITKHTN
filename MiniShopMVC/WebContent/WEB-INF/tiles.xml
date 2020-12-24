@@ -23,4 +23,16 @@
 <put-attribute name="title" value="Trang danh sách Author" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/edit-author.jsp"/>
 </definition>
+<definition name="category" extends="mainTemplate">
+<put-attribute name="title" value="Trang Category" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/category.jsp"/>
+</definition>
+<definition name="add-category" extends="mainTemplate">
+<put-attribute name="title" value="Trang Thêm Category" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/add-category.jsp"/>
+</definition>
+<definition name="product" extends="mainTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/product.jsp"/>
+</definition>
 </tiles-definitions>
