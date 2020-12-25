@@ -7,4 +7,19 @@
 <input type="text" name="txtSearch" placeholder="Search..." />
 <button class="btn btn-primary">Search</button>
 </form>
+<div class="col-4">
+<img src="${pageContext.request.contextPath }/images/${product.imageUrl}">
+
+</div>
+<div class="clear"></div>
+<div class="col-8">
+<h2>${product.title }</h2>
+<p>ISBN:<b>${product.isbn }</b>
+<p>Pages:<b>${product.pages }</b>
+<p>Price:<b>${product.price }</b>
+<form method="post" action="${pageContext.request.contextPath }/cart/add">
+<input type="hidden" value="${product.productId }" name="productId"/>
+<input type="number" name="quantity" value="1"/>
+</form>
+</div>
 </div>
