@@ -6,8 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import businessLogics.CategoryBL;
 import businessLogics.ProductBL;
+import javaBeans.Category;
 import javaBeans.Product;
 
 @Controller
@@ -17,10 +20,11 @@ public class ProductController {
 	int soMauTinTrenTrang = 2;
 	int soMauTin = dsProduct.size();
 	int tongSoTrang = (int) Math.ceil((double) soMauTin / soMauTinTrenTrang);
+	List<Category> dsCategory = CategoryBL.docTatCa();
 
 	@RequestMapping("/xem")
 	public String xemProduct(Model model) {
-
+		model.addAttribute("dsCategory", dsCategory);
 		model.addAttribute("tongSoTrang", tongSoTrang);
 		model.addAttribute("dsProduct", dsProduct);
 
@@ -38,8 +42,17 @@ public class ProductController {
 		model.addAttribute("dsProduct", dsProduct.subList(soMauTinTrenTrang * (trang - 1),
 				(soMauTinTrenTrang * (trang - 1) + 2) < soMauTin ? (soMauTinTrenTrang * (trang - 1) + 2) : soMauTin));
 		model.addAttribute("tongSoTrang", tongSoTrang);
-
+		model.addAttribute("dsCategory", dsCategory);
 		model.addAttribute("trangHienTai", trang);
 		return "product";
+	}
+
+	@RequestMapping("/chi-tiet")
+	public String xemChiTiet(@RequestParam(name = "productId") int productId, Model model) {
+		dsProduct.forEach(p -> {
+			if (p.getProductId() == productId)
+				model.addAttribute("product", p);
+		});
+		return "chi-tiet-product";
 	}
 }

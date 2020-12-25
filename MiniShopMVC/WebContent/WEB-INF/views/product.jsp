@@ -9,7 +9,7 @@
 				<img src="${pageContext.request.contextPath}/images/${p.imageUrl}"
 					alt="${p.title }" />
 				<div class="info">
-					<p>${p.title }</p>
+					<p><a href="${pageContext.request.contextPath}/product/chi-tiet?productId=${p.productId}">${p.title }</a></p>
 				</div>
 			</div>
 		</div>
