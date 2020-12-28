@@ -24,6 +24,7 @@
 			<li><a href="${pageContext.request.contextPath }/category/category">Category</a>
 			<li><a href="${pageContext.request.contextPath }/category/add-category">Add-Category</a>
 			<li><a href="${pageContext.request.contextPath }/product/xem">Product</a>
+			<li><a href="${pageContext.request.contextPath }/xem-chim">Xem chim</a>
 		</ul>
 	</div>
 	<div class="main">

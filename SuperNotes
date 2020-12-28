@@ -38,4 +38,13 @@ Note cho Bai03M4_Tiles
  Trang hien tai: MiniShopMVC/
  - href="/them" -> localhost/them: goi truc tiep tu link
  - href="them" -> truy cap lai MiniShopMVC, them /them vao = MiniShopMVC/them: goi tu trang (controller) hien tai -> click vao link nay lien tuc se khong return 1 ket qua
- - asdasd 
+ - lam xong trang chi-tiet-product (5.4).
+ - chua lam hien 3 cham khi so trang qua nhieu. du kien la tao flag, khi co thi hien them, khong thi hien 3 cham.
+ - Co the long` 2 template vao nhau: <put-attribute name="noiDung" value="productTemplate"/>
+ -> phai setAttribute o wrapper page.
+ - file Student.rar co lop Helper.(Cho bai 5.6)
+ 
+ Note cho bai Spring Interceptors
+  - Co the cung cap du lieu bang interceptor.
+  - path khong can bao gom contextPath.
+ 

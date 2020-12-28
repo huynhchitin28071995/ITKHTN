@@ -14,12 +14,13 @@
 <div class="clear"></div>
 <div class="col-8">
 <h2>${product.title }</h2>
-<p>ISBN:<b>${product.isbn }</b>
-<p>Pages:<b>${product.pages }</b>
-<p>Price:<b>${product.price }</b>
+<p>ISBN: <b>${product.isbn }</b>
+<p>Pages: <b>${product.pages }</b>
+<p>Price: <b>${product.price }</b>
 <form method="post" action="${pageContext.request.contextPath }/cart/add">
 <input type="hidden" value="${product.productId }" name="productId"/>
 <input type="number" name="quantity" value="1"/>
+<button class="btn btn-primary">Add to Cart</button>
 </form>
 </div>
 </div>

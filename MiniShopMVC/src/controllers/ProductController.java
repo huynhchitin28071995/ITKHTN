@@ -53,6 +53,7 @@ public class ProductController {
 			if (p.getProductId() == productId)
 				model.addAttribute("product", p);
 		});
+		model.addAttribute("dsCategory", dsCategory);
 		return "chi-tiet-product";
 	}
 }

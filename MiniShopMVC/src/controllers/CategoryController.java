@@ -1,6 +1,5 @@
 package controllers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,18 +15,18 @@ import javaBeans.Category;
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
+	List<Category> dsParent = CategoryBL.docParent();
+	List<Category> dsCategory = CategoryBL.docTatCa();
+	
 @RequestMapping("/category")
-public String dsCategory(Model model) {
-	List<Category> dsCategory = new ArrayList<>();
-	dsCategory = CategoryBL.docTatCa();
+public String dsCategory(Model model) {	
 	model.addAttribute("dsCategory", dsCategory);
 	return "category";
 }
 
 @RequestMapping("/add-category")
 public String addCategory(Model model) {
-	List<Category> dsParent = new ArrayList<>();
-	dsParent= CategoryBL.docParent();
+	model.addAttribute("dsCategory", dsCategory);
 	Map<Integer, String> mapParent = new HashMap<>();
 	dsParent.forEach(pr -> {
 		mapParent.put(pr.getCategoryId(), pr.getCategoryName());
