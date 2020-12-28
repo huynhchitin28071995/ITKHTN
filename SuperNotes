@@ -1,36 +1,36 @@
-Note cho bài tập Module 3
+Note cho bÃ i táº­p Module 3
 -trong trang jsp, dat name cua cac element trung` nhau, trong java hoac servlet se co phuong thuc request.getParameterValues("name") tra ve 1 mang cac gia tri co name="name";
--copy 2 thu vien trong student: mail, javax.activation (bÃ i 3.7)
--lÃ m 3.6.
+-copy 2 thu vien trong student: mail, javax.activation (bÃƒÂ i 3.7)
+-lÃƒÂ m 3.6.
 - phai co thu vien jakarta.activation-1.2.1.jar moi gui duoc mail khi lam o nha.
 - Bai tap upload: vi upload len ...../views/upload/* nen trong index.jsp phai de link hinh anh la src="${pageContext.request.contextPath}/views/upload/${img}".
-Note cho bài 4,9,10 quản lý bán sữa
--Phải có Class.forName(“…Driver”) mới chạy servlet, đọc database được
-Note cho bài 08M3:
--Mở trang thong-tin-khach-hang.jsp thì xóa được ở server và frontent, chỉ xuất hiện nội dung của custom tag ml1:bangTTKH;
--Mở trang Vd1.jsp thì ko thể xóa cả front end và back end (Vd1.jsp->doPost Vd1Servlet -> KhachHangServlet -> thong-tin-khach-hang.jsp). Phải truyền tham số là id vào xoaKH(id) mới xóa được, maKH ko xóa được. Mở trang Vd1 thì thực hiện JavaScript của trang Vd1 và không thực hiện JavaScript của trang thong-tin-khach-hang.jsp;
+Note cho bÃ i 4,9,10 quáº£n lÃ½ bÃ¡n sá»¯a
+-Pháº£i cÃ³ Class.forName(â€œâ€¦Driverâ€�) má»›i cháº¡y servlet, Ä‘á»�c database Ä‘Æ°á»£c
+Note cho bÃ i 08M3:
+-Má»Ÿ trang thong-tin-khach-hang.jsp thÃ¬ xÃ³a Ä‘Æ°á»£c á»Ÿ server vÃ  frontent, chá»‰ xuáº¥t hiá»‡n ná»™i dung cá»§a custom tag ml1:bangTTKH;
+-Má»Ÿ trang Vd1.jsp thÃ¬ ko thá»ƒ xÃ³a cáº£ front end vÃ  back end (Vd1.jsp->doPost Vd1Servlet -> KhachHangServlet -> thong-tin-khach-hang.jsp). Pháº£i truyá»�n tham sá»‘ lÃ  id vÃ o xoaKH(id) má»›i xÃ³a Ä‘Æ°á»£c, maKH ko xÃ³a Ä‘Æ°á»£c. Má»Ÿ trang Vd1 thÃ¬ thá»±c hiá»‡n JavaScript cá»§a trang Vd1 vÃ  khÃ´ng thá»±c hiá»‡n JavaScript cá»§a trang thong-tin-khach-hang.jsp;
 Note cho MinishopMVC
--Ôn lại Hibernate để làm:
+-Ã”n láº¡i Hibernate Ä‘á»ƒ lÃ m:
 oPublic class CSDL{
-Private static SessionFactory factory;
-Static { factory = new Configuration().configure().buildSessionFactory();}
-Public static SessionFactory getSessionFactory () {	 return factory;}
+ï‚§Private static SessionFactory factory;
+ï‚§Static { factory = new Configuration().configure().buildSessionFactory();}
+ï‚§Public static SessionFactory getSessionFactory () {	 return factory;}
 oPublic class PublisherBL{ 
-Public List<Publisher> docPublisher(){
-List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery(“ Select publisher from Publisher publisher”).getResultList()/list();
-Return dsPublisher;}
+ï‚§Public List<Publisher> docPublisher(){
+ï‚·List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery(â€œ Select publisher from Publisher publisherâ€�).getResultList()/list();
+ï‚·Return dsPublisher;}
 
 
-*** Làm bài 4.2, 4.3, 4.4 module 3
-Note cho bài 4 module 3:
--Làm xong trang index.jsp, add.jsp, làm tiếp phần link edit, delete publisher.
--Trong hibernate, chỉ insert những giá trị được select từ database vào database.
+*** LÃ m bÃ i 4.2, 4.3, 4.4 module 3
+Note cho bÃ i 4 module 3:
+-LÃ m xong trang index.jsp, add.jsp, lÃ m tiáº¿p pháº§n link edit, delete publisher.
+-Trong hibernate, chá»‰ insert nhá»¯ng giÃ¡ trá»‹ Ä‘Æ°á»£c select tá»« database vÃ o database.
 
 
 
 Note cho Bai03M4_Tiles
-- trong phần upload file (và kể cả những phần khác), đặt name trong html trùng với tên biến trong Controller.class sẽ tự tạo đối tượng có tên như vậy và truyền vào phương thức dưới dạng tham số. VD:
-          <p>Tập tin: <input type="file" multiple="multiple" name="files"></p>
+- trong pháº§n upload file (vÃ  ká»ƒ cáº£ nhá»¯ng pháº§n khÃ¡c), Ä‘áº·t name trong html trÃ¹ng vá»›i tÃªn biáº¿n trong Controller.class sáº½ tá»± táº¡o Ä‘á»‘i tÆ°á»£ng cÃ³ tÃªn nhÆ° váº­y vÃ  truyá»�n vÃ o phÆ°Æ¡ng thá»©c dÆ°á»›i dáº¡ng tham sá»‘. VD:
+          <p>Táº­p tin: <input type="file" multiple="multiple" name="files"></p>
           public String uploadFile(MultipartFile[] files, HttpServletRequest request) {}
           
           
@@ -38,3 +38,4 @@ Note cho Bai03M4_Tiles
  Trang hien tai: MiniShopMVC/
  - href="/them" -> localhost/them: goi truc tiep tu link
  - href="them" -> truy cap lai MiniShopMVC, them /them vao = MiniShopMVC/them: goi tu trang (controller) hien tai -> click vao link nay lien tuc se khong return 1 ket qua
+ - asdasd 
