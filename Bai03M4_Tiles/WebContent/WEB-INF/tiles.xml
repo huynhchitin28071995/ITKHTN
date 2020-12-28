@@ -22,7 +22,10 @@
         <put-attribute name="tieuDe" value="Thêm loại sữa" type="string" />
         <put-attribute name="noiDung" value="/WEB-INF/views/them-loai-sua.jsp" />
     </definition>
-
+    <definition name="themLoaiSua2" extends="mau01">
+        <put-attribute name="tieuDe" value="Thêm loại sữa" type="string" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/them-loai-sua2.jsp" />
+    </definition>
     <definition name="danhSachLoaiSua" extends="mau01">
         <put-attribute name="tieuDe" value="Tìm loại sữa" type="string" />
         <put-attribute name="noiDung" value="/WEB-INF/views/tim-loai-sua.jsp" />

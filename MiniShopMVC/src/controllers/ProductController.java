@@ -56,4 +56,10 @@ public class ProductController {
 		model.addAttribute("dsCategory", dsCategory);
 		return "chi-tiet-product";
 	}
+
+	@RequestMapping("/search")
+	public String search(@RequestParam(name = "txtSearch") String txtSearch) {
+		Product p = ProductBL.timProduct(txtSearch);
+		return "redirect:/product/chi-tiet?productId=" + p.getProductId();
+	}
 }

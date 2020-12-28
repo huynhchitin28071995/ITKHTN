@@ -3,7 +3,7 @@
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <div><h1>${product.title }</h1></div>
 <div>
-<form class="form-search">
+<form action="${pageContext.request.contextPath}/product/search" class="form-search">
 <input type="text" name="txtSearch" placeholder="Search..." />
 <button class="btn btn-primary">Search</button>
 </form>
@@ -17,7 +17,7 @@
 <p>ISBN: <b>${product.isbn }</b>
 <p>Pages: <b>${product.pages }</b>
 <p>Price: <b>${product.price }</b>
-<form method="post" action="${pageContext.request.contextPath }/cart/add">
+<form method="post" action="${pageContext.request.contextPath }/cart/them-cart" name="somethingelsethanobj">
 <input type="hidden" value="${product.productId }" name="productId"/>
 <input type="number" name="quantity" value="1"/>
 <button class="btn btn-primary">Add to Cart</button>

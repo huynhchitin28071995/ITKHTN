@@ -1,39 +1,44 @@
-Note cho bÃ i táº­p Module 3
+Note cho bÄ‚Æ’Ă‚Â i tÄ‚Â¡Ă‚ÂºĂ‚Â­p Module 3
 -trong trang jsp, dat name cua cac element trung` nhau, trong java hoac servlet se co phuong thuc request.getParameterValues("name") tra ve 1 mang cac gia tri co name="name";
--copy 2 thu vien trong student: mail, javax.activation (bÃƒÂ i 3.7)
--lÃƒÂ m 3.6.
+-copy 2 thu vien trong student: mail, javax.activation (bÄ‚Æ’Ă†â€™Ä‚â€�Ă‚Â i 3.7)
+-lÄ‚Æ’Ă†â€™Ä‚â€�Ă‚Â m 3.6.
 - phai co thu vien jakarta.activation-1.2.1.jar moi gui duoc mail khi lam o nha.
 - Bai tap upload: vi upload len ...../views/upload/* nen trong index.jsp phai de link hinh anh la src="${pageContext.request.contextPath}/views/upload/${img}".
-Note cho bÃ i 4,9,10 quáº£n lÃ½ bÃ¡n sá»¯a
--Pháº£i cÃ³ Class.forName(â€œâ€¦Driverâ€�) má»›i cháº¡y servlet, Ä‘á»�c database Ä‘Æ°á»£c
-Note cho bÃ i 08M3:
--Má»Ÿ trang thong-tin-khach-hang.jsp thÃ¬ xÃ³a Ä‘Æ°á»£c á»Ÿ server vÃ  frontent, chá»‰ xuáº¥t hiá»‡n ná»™i dung cá»§a custom tag ml1:bangTTKH;
--Má»Ÿ trang Vd1.jsp thÃ¬ ko thá»ƒ xÃ³a cáº£ front end vÃ  back end (Vd1.jsp->doPost Vd1Servlet -> KhachHangServlet -> thong-tin-khach-hang.jsp). Pháº£i truyá»�n tham sá»‘ lÃ  id vÃ o xoaKH(id) má»›i xÃ³a Ä‘Æ°á»£c, maKH ko xÃ³a Ä‘Æ°á»£c. Má»Ÿ trang Vd1 thÃ¬ thá»±c hiá»‡n JavaScript cá»§a trang Vd1 vÃ  khÃ´ng thá»±c hiá»‡n JavaScript cá»§a trang thong-tin-khach-hang.jsp;
+Note cho bÄ‚Æ’Ă‚Â i 4,9,10 quÄ‚Â¡Ă‚ÂºĂ‚Â£n lÄ‚Æ’Ă‚Â½ bÄ‚Æ’Ă‚Â¡n sÄ‚Â¡Ă‚Â»Ă‚Â¯a
+-PhÄ‚Â¡Ă‚ÂºĂ‚Â£i cÄ‚Æ’Ă‚Â³ Class.forName(Ä‚Â¢Ă¢â€�Â¬Ă…â€œÄ‚Â¢Ă¢â€�Â¬Ă‚Â¦DriverÄ‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½) mÄ‚Â¡Ă‚Â»Ă¢â‚¬Âºi chÄ‚Â¡Ă‚ÂºĂ‚Â¡y servlet, Ä‚â€�Ă¢â‚¬ËœÄ‚Â¡Ă‚Â»Ă¯Â¿Â½c database Ä‚â€�Ă¢â‚¬ËœÄ‚â€ Ă‚Â°Ä‚Â¡Ă‚Â»Ă‚Â£c
+Note cho bÄ‚Æ’Ă‚Â i 08M3:
+-MÄ‚Â¡Ă‚Â»Ă…Â¸ trang thong-tin-khach-hang.jsp thÄ‚Æ’Ă‚Â¬ xÄ‚Æ’Ă‚Â³a Ä‚â€�Ă¢â‚¬ËœÄ‚â€ Ă‚Â°Ä‚Â¡Ă‚Â»Ă‚Â£c Ä‚Â¡Ă‚Â»Ă…Â¸ server vÄ‚Æ’Ă‚Â  frontent, chÄ‚Â¡Ă‚Â»Ă¢â‚¬Â° xuÄ‚Â¡Ă‚ÂºĂ‚Â¥t hiÄ‚Â¡Ă‚Â»Ă¢â‚¬Â¡n nÄ‚Â¡Ă‚Â»Ă¢â€�Â¢i dung cÄ‚Â¡Ă‚Â»Ă‚Â§a custom tag ml1:bangTTKH;
+-MÄ‚Â¡Ă‚Â»Ă…Â¸ trang Vd1.jsp thÄ‚Æ’Ă‚Â¬ ko thÄ‚Â¡Ă‚Â»Ă†â€™ xÄ‚Æ’Ă‚Â³a cÄ‚Â¡Ă‚ÂºĂ‚Â£ front end vÄ‚Æ’Ă‚Â  back end (Vd1.jsp->doPost Vd1Servlet -> KhachHangServlet -> thong-tin-khach-hang.jsp). PhÄ‚Â¡Ă‚ÂºĂ‚Â£i truyÄ‚Â¡Ă‚Â»Ă¯Â¿Â½n tham sÄ‚Â¡Ă‚Â»Ă¢â‚¬Ëœ lÄ‚Æ’Ă‚Â  id vÄ‚Æ’Ă‚Â o xoaKH(id) mÄ‚Â¡Ă‚Â»Ă¢â‚¬Âºi xÄ‚Æ’Ă‚Â³a Ä‚â€�Ă¢â‚¬ËœÄ‚â€ Ă‚Â°Ä‚Â¡Ă‚Â»Ă‚Â£c, maKH ko xÄ‚Æ’Ă‚Â³a Ä‚â€�Ă¢â‚¬ËœÄ‚â€ Ă‚Â°Ä‚Â¡Ă‚Â»Ă‚Â£c. MÄ‚Â¡Ă‚Â»Ă…Â¸ trang Vd1 thÄ‚Æ’Ă‚Â¬ thÄ‚Â¡Ă‚Â»Ă‚Â±c hiÄ‚Â¡Ă‚Â»Ă¢â‚¬Â¡n JavaScript cÄ‚Â¡Ă‚Â»Ă‚Â§a trang Vd1 vÄ‚Æ’Ă‚Â  khÄ‚Æ’Ă‚Â´ng thÄ‚Â¡Ă‚Â»Ă‚Â±c hiÄ‚Â¡Ă‚Â»Ă¢â‚¬Â¡n JavaScript cÄ‚Â¡Ă‚Â»Ă‚Â§a trang thong-tin-khach-hang.jsp;
 Note cho MinishopMVC
--Ã”n láº¡i Hibernate Ä‘á»ƒ lÃ m:
+-Ä‚Æ’Ă¢â‚¬ï¿½n lÄ‚Â¡Ă‚ÂºĂ‚Â¡i Hibernate Ä‚â€�Ă¢â‚¬ËœÄ‚Â¡Ă‚Â»Ă†â€™ lÄ‚Æ’Ă‚Â m:
 oPublic class CSDL{
-ï‚§Private static SessionFactory factory;
-ï‚§Static { factory = new Configuration().configure().buildSessionFactory();}
-ï‚§Public static SessionFactory getSessionFactory () {	 return factory;}
+Ä‚Â¯Ă¢â‚¬ï¿½Ă‚Â§Private static SessionFactory factory;
+Ä‚Â¯Ă¢â‚¬ï¿½Ă‚Â§Static { factory = new Configuration().configure().buildSessionFactory();}
+Ä‚Â¯Ă¢â‚¬ï¿½Ă‚Â§Public static SessionFactory getSessionFactory () {	 return factory;}
 oPublic class PublisherBL{ 
-ï‚§Public List<Publisher> docPublisher(){
-ï‚·List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery(â€œ Select publisher from Publisher publisherâ€�).getResultList()/list();
-ï‚·Return dsPublisher;}
+Ä‚Â¯Ă¢â‚¬ï¿½Ă‚Â§Public List<Publisher> docPublisher(){
+Ä‚Â¯Ă¢â‚¬ï¿½Ă‚Â·List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery(Ä‚Â¢Ă¢â€�Â¬Ă…â€œ Select publisher from Publisher publisherÄ‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½).getResultList()/list();
+Ä‚Â¯Ă¢â‚¬ï¿½Ă‚Â·Return dsPublisher;}
 
 
-*** LÃ m bÃ i 4.2, 4.3, 4.4 module 3
-Note cho bÃ i 4 module 3:
--LÃ m xong trang index.jsp, add.jsp, lÃ m tiáº¿p pháº§n link edit, delete publisher.
--Trong hibernate, chá»‰ insert nhá»¯ng giÃ¡ trá»‹ Ä‘Æ°á»£c select tá»« database vÃ o database.
+*** LÄ‚Æ’Ă‚Â m bÄ‚Æ’Ă‚Â i 4.2, 4.3, 4.4 module 3
+Note cho bÄ‚Æ’Ă‚Â i 4 module 3:
+-lam` xong trang index.jsp, add.jsp, lÄ‚Æ’Ă‚Â m tiÄ‚Â¡Ă‚ÂºĂ‚Â¿p phÄ‚Â¡Ă‚ÂºĂ‚Â§n link edit, delete publisher.
+-Trong hibernate, chi insert nhung gia tri duoc select tu database vao database.
 
 
 
 Note cho Bai03M4_Tiles
-- trong pháº§n upload file (vÃ  ká»ƒ cáº£ nhá»¯ng pháº§n khÃ¡c), Ä‘áº·t name trong html trÃ¹ng vá»›i tÃªn biáº¿n trong Controller.class sáº½ tá»± táº¡o Ä‘á»‘i tÆ°á»£ng cÃ³ tÃªn nhÆ° váº­y vÃ  truyá»�n vÃ o phÆ°Æ¡ng thá»©c dÆ°á»›i dáº¡ng tham sá»‘. VD:
-          <p>Táº­p tin: <input type="file" multiple="multiple" name="files"></p>
+- trong phan upload file (va ke nhung phan khac), dat parameter's name trong html trung voi ten tham so' trong Controller.class se tao doi tuong nhu vay va truyen vao phuong thuc duoi dang tham so. VD:
+          <p>Tap tin: <input type="file" multiple="multiple" name="files"></p>
           public String uploadFile(MultipartFile[] files, HttpServletRequest request) {}
-          
-          
+ ->ko phai them @RequestParam. 
+ -		<form action="them2" method="post"><p>Mã loại: <input type="text" name="maLoai" value="${maLoai }"></p>
+ 			<p>Ten loai: <input type="text" name="tenLoai" value="${tenLoai }"></p>
+			<p><button type="submit">Them</button></p></form>         
+ - 		public String them2(LoaiSua ls, Model model) { LoaiSuaBL.them(ls); model.addAttribute("ls", ls); return "themLoaiSua2";}
+ -> tu tong hop thanh obj LoaiSua khi dat element's name trung voi ten bien trong LoaiSua.
+	}        
  Note cho Bai MiniShopMVC:
  Trang hien tai: MiniShopMVC/
  - href="/them" -> localhost/them: goi truc tiep tu link
@@ -43,6 +48,11 @@ Note cho Bai03M4_Tiles
  - Co the long` 2 template vao nhau: <put-attribute name="noiDung" value="productTemplate"/>
  -> phai setAttribute o wrapper page.
  - file Student.rar co lop Helper.(Cho bai 5.6)
+ - phai define lai root@localhost trong procedure. Dinh dang utf-8-general phai trung nhau giua bang va database
+ - cookie, .setMaxAge, .setPath, response.setCookie(); public String xemCart(Model model, @CookieValue("cart") String id) {}
+ - lam xong 5.6 5.7.
+ 
+ 
  
  Note cho bai Spring Interceptors
   - Co the cung cap du lieu bang interceptor.

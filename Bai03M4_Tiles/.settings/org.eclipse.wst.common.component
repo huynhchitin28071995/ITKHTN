@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Bai03M4_Tiles">
+        
+    <wb-module deploy-name="Bai03M4_TilesMailUpload">
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Bai03M4_Tiles"/>
-        <property name="java-output-path" value="/Bai03M4_Tiles/build/classes"/>
+                
+        <property name="java-output-path" value="/Bai03M4_TilesMailUpload/build/classes"/>
+        <property name="context-root" value="Bai03M4_TilesMailUpload"/>
+            
     </wb-module>
+    
 </project-modules>

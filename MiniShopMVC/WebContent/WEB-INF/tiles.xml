@@ -42,13 +42,23 @@
 <put-attribute name="title" value="Trang Thêm Category" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/add-category.jsp"/>
 </definition>
-<definition name="product" extends="productTemplate">
+
+<definition name="productList" extends="productTemplate">
 <put-attribute name="title" value="Trang product" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/product.jsp"/>
 </definition>
-<definition name="chi-tiet-product" extends="productTemplate">
+
+<definition name="product" extends="mainTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="productList"/>
+</definition>
+<definition name="chi-tiet-product.ND" extends="productTemplate">
 <put-attribute name="title" value="Trang product" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/chi-tiet-product.jsp"/>
+</definition>
+<definition name="chi-tiet-product" extends="mainTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="chi-tiet-product.ND"/>
 </definition>
 <definition name="xem-chim" extends="mainTemplate">
 <put-attribute name="title" value="Xem chim" type="string"/>
@@ -58,4 +68,10 @@
 <put-attribute name="title" value="Dang nhap" type="string"></put-attribute>
 <put-attribute name="noiDung" value="/WEB-INF/views/dang-nhap.jsp"></put-attribute>
 </definition>
+
+<definition name="cart" extends="mainTemplate">
+<put-attribute name="title" value="Gio Hang" type="string"></put-attribute>
+<put-attribute name="noiDung" value="/WEB-INF/views/cart.jsp"></put-attribute>
+</definition>
+
 </tiles-definitions>

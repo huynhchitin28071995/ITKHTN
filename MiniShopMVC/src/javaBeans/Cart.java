@@ -2,6 +2,7 @@ package javaBeans;
 // Generated Dec 23, 2020 9:01:02 AM by Hibernate Tools 5.1.8.Final
 
 import java.util.Date;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -21,23 +22,28 @@ import javax.persistence.TemporalType;
 @Table(name = "cart", catalog = "minishop")
 public class Cart implements java.io.Serializable {
 
-	private CartId id;
+	private String id;
 	private Product product;
 	private User user;
 	private int quantity;
 	private Date addedDate;
+	private int productId;
+	private String title;
+	private String imageUrl;
+	private int price;
+	private Long memberId;
 
 	public Cart() {
 	}
 
-	public Cart(CartId id, Product product, int quantity, Date addedDate) {
+	public Cart(String id, Product product, int quantity, Date addedDate) {
 		this.id = id;
 		this.product = product;
 		this.quantity = quantity;
 		this.addedDate = addedDate;
 	}
 
-	public Cart(CartId id, Product product, User user, int quantity, Date addedDate) {
+	public Cart(String id, Product product, User user, int quantity, Date addedDate) {
 		this.id = id;
 		this.product = product;
 		this.user = user;
@@ -50,12 +56,12 @@ public class Cart implements java.io.Serializable {
 	@AttributeOverrides({
 			@AttributeOverride(name = "cartId", column = @Column(name = "CartId", nullable = false, length = 32)),
 			@AttributeOverride(name = "productId", column = @Column(name = "ProductId", nullable = false)) })
-	public CartId getId() {
+	public String getId() {
 		return this.id;
 	}
 
-	public void setId(CartId id) {
-		this.id = id;
+	public void setId(String string) {
+		this.id = string;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -95,6 +101,46 @@ public class Cart implements java.io.Serializable {
 
 	public void setAddedDate(Date addedDate) {
 		this.addedDate = addedDate;
+	}
+
+	public void setProductId(int int1) {
+		this.productId = int1;
+	}
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public Long getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
 	}
 
 }
