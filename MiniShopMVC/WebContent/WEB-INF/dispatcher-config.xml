@@ -41,8 +41,8 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 	<mvc:annotation-driven />
-	<context:component-scan
-		base-package="controllers" />
+	<context:component-scan	base-package="controllers,restControllers"  />
+	
 	<mvc:resources location="/css/" mapping="/css/*" />
 	<mvc:resources location="/js/" mapping="/js/*" />
 	<mvc:resources location="/images/" mapping="/images/*" />

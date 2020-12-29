@@ -40,9 +40,9 @@ public class AuthorBL {
 	}
 
 	// Them author
-	public static void them(Author author) {
+	public static int them(Author author) {
 		String sql = "Insert into author(authorname) values(?)";
-		jdbc.update(sql, author.getAuthorName());
+		return jdbc.update(sql, author.getAuthorName());
 	}
 
 	public static void xoa(int authorId) {
