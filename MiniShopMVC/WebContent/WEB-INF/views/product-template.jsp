@@ -18,6 +18,14 @@
 					<li><a href="${pageContext.request.contextPath}/cart.html">Cart</a></li>
 					<li><a href="${pageContext.request.contextPath}/auth/logon.html">Log On</a></li>
 					<li><a href="${pageContext.request.contextPath}/auth/register.html">Register</a></li>
+					<li>
+Welcome <span>${pageContext.request.userPrincipal.name}</span>
+<form class="form-hidden" method="post"
+action="${pageContext.request.contextPath}/auth/logoff.html">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+<button>Log Off</button>
+</form>
+</li>
 				</ul>
 			</div>
 			<div class="clear"></div>

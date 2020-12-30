@@ -12,8 +12,10 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 			access="isAnonymous()" />
 		<intercept-url pattern="/auth/register.html"
 			access="isAnonymous()" />
-		<intercept-url pattern="/admin/*"
+		<intercept-url pattern="/admin/**"
 			access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/user/*"
+			access="hasRole('ROLE_USER')" />
 		<form-login login-page="/auth/logon.html"
 			login-processing-url="/auth/logon.html"
 			always-use-default-target="false"
