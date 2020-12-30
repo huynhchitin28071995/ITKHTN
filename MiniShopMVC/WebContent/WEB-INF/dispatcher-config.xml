@@ -25,6 +25,7 @@
 			</list>
 		</property>
 	</bean>
+	<bean id="userService" class="businessLogics.UserService" />
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/product/xem" />

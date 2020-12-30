@@ -17,9 +17,9 @@ Note cho MinishopMVC
 	Public static SessionFactory getSessionFactory () {	 return factory;}
 - Public class PublisherBL{ 
 	Public List<Publisher> docPublisher(){
-	List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery(“ Select publisher from Publisher publisher").getResultList()/list();
+	List<Publisher> dsPublisher = CSDL.getSessionFactory().openSession().createQuery("Select publisher from Publisher publisher").getResultList()/list();
 		Return dsPublisher;}
-
+- Project Hibernate is in PortableEclipseWorkSpace.
 
 *** Lam bai 4.2, 4.3, 4.4 module 3
 Note cho bai 4 module 3:
@@ -68,3 +68,7 @@ Note cho Bai03M4_Tiles
 => {phai sua code o myTags.BangTTKH va Vd1.jsp:	[{myTags.bangTTKH:sua href},{Vd1.jsp:them function}]}
 + lam tiep phan xoa bang javaScript(Chu y ',"), da xoa duoc trong database.
 + demo truyen tham so vao js bang HTML: <td><a href="javascript:xoaKhachHang('${kh.maKH}')">Xoa</a></td>
+
+Note cho Spring security:
+- khong co <servlet> wrap <filter>
+- query user instead of member
