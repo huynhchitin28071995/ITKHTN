@@ -6,9 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import businessLogics.CartBL;
 import javaBeans.Cart;
@@ -18,13 +16,20 @@ import util.Helper;
 @RequestMapping("/cart")
 public class CartController {
 	@RequestMapping("")
-	public String xemCart(Model model, @CookieValue("cart") String id) {
+	public String xemCart(Model model, HttpServletRequest request) {
+		String id = null;
+		for (Cookie cookie : request.getCookies()) {
+			if (cookie.getName().equals("cart")) {
+				id = cookie.getValue();
+			}
+
+		}
 		model.addAttribute("title", "Your Cart");
 		model.addAttribute("carts", CartBL.getCarts(id));
 		return "cart";
 	}
 
-	@RequestMapping(path = "/them-cart", method = RequestMethod.POST)
+	@RequestMapping(path = "/them-cart")
 	public String themCart(HttpServletRequest request, Model model, Cart obj, HttpServletResponse response) {
 		String id = null;
 		System.out.println(request.getServletContext().getContextPath());
@@ -46,5 +51,19 @@ public class CartController {
 		CartBL.add(obj);
 		return "redirect:/cart";
 
+	}
+
+	@RequestMapping("/checkout.html")
+	public String checkOut(Model model, HttpServletRequest request) {
+		String id = null;
+		for (Cookie cookie : request.getCookies()) {
+			if (cookie.getName().equals("cart")) {
+				id = cookie.getValue();
+			}
+
+		}
+		model.addAttribute("title", "Your Cart");
+		model.addAttribute("carts", CartBL.getCarts(id));
+		return "checkOut";
 	}
 }

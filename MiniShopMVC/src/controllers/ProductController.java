@@ -14,7 +14,7 @@ import javaBeans.Category;
 import javaBeans.Product;
 
 @Controller
-@RequestMapping("/admin/product")
+@RequestMapping("/product")
 public class ProductController {
 	List<Product> dsProduct = ProductBL.docTatCa();
 	int soMauTinTrenTrang = 2;
@@ -28,7 +28,7 @@ public class ProductController {
 		model.addAttribute("tongSoTrang", tongSoTrang);
 		model.addAttribute("dsProduct", dsProduct);
 
-		return "redirect:/admin/product/xem/1";
+		return "redirect:/product/xem/1";
 	}
 
 	@RequestMapping(path = "/xem/{trang}")
@@ -60,6 +60,6 @@ public class ProductController {
 	@RequestMapping("/search")
 	public String search(@RequestParam(name = "txtSearch") String txtSearch) {
 		Product p = ProductBL.timProduct(txtSearch);
-		return "redirect:/admin/product/chi-tiet?productId=" + p.getProductId();
+		return "redirect:/product/chi-tiet?productId=" + p.getProductId();
 	}
 }

@@ -83,4 +83,9 @@
 <put-attribute name="title" value="Dang nhap" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/auth/logon.jsp"/>
 </definition>
+
+<definition name="checkOut" extends="mainTemplate">
+<put-attribute name="title" value="Check Out" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/checkout.jsp"/>
+</definition>
 </tiles-definitions>

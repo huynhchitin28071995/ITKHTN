@@ -17,7 +17,7 @@
 <p>ISBN: <b>${product.isbn }</b>
 <p>Pages: <b>${product.pages }</b>
 <p>Price: <b>${product.price }</b>
-<form method="post" action="${pageContext.request.contextPath }/cart/them-cart" name="somethingelsethanobj">
+<form method="get" action="${pageContext.request.contextPath }/cart/them-cart" name="somethingelsethanobj">
 <input type="hidden" value="${product.productId }" name="productId"/>
 <input type="number" name="quantity" value="1"/>
 <button class="btn btn-primary">Add to Cart</button>
