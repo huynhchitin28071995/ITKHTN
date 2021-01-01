@@ -1,0 +1,4 @@
+- wrapper element: position: relative thi` moi' set inner element:position:absolute duoc.
+- position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -> canh giua noi dung trong container.
+- css transition: duration affected-property timing-function...;
+- <iframe src="ma~ nhung" width="510" height="240" ></iframe>
