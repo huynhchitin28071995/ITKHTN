@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
+<form method="get" class="form" name="form-checkout" action="checkout">
 <table>
 <tr><td>Email</td><td><input type="email" name="email"></td></tr>
 <tr><td>Tel</td><td><input type="tel" name="tel"></td></tr>
@@ -23,4 +23,5 @@ src="${pageContext.request.contextPath}/images/${o.imageUrl}" ></td>
 </tr>
 </c:forEach>
 </table>
-<p><a href="${pageContext.request.contextPath}/cart/checkout.html" class="btn btnprimary">Check Out</a></p>
+<button class="btn">Check Out</button>
+</form>

@@ -6,10 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import businessLogics.CartBL;
+import businessLogics.InvoiceBL;
 import javaBeans.Cart;
+import javaBeans.NewInvoice;
 import util.Helper;
 
 @Controller
@@ -65,5 +68,12 @@ public class CartController {
 		model.addAttribute("title", "Your Cart");
 		model.addAttribute("carts", CartBL.getCarts(id));
 		return "checkOut";
+	}
+
+	@RequestMapping(value = "checkout")
+	public String checkout(Model model, NewInvoice obj, @CookieValue("cart") String id) {
+		obj.setId(id);
+		InvoiceBL.add(obj);
+		return "redirect:/order/detail/" + obj.getId();
 	}
 }
