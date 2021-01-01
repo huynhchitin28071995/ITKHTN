@@ -1,0 +1,254 @@
+/* CSS Document */
+body{
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:0.85em;
+	margin: 0px 15px 30px 15px;
+}
+.clearfix{
+	clear: both;
+}
+a:link{
+	text-decoration: none;
+}
+@font-face{
+	font-family:font_shop;
+	src: url('../fonts/VNI-THUPHAP1.TTF')
+}
+@font-face{
+	font-family:font_khauhieu;
+	src: url('../fonts/UTM ViceroyJF.ttf')
+}
+@font-face{
+	font-family:font-chung; 
+	src:url('../fonts/Philosopher-Bold.ttf'),url('../fonts/Philosopher-BoldItalic.ttf'),
+		url('../fonts/Philosopher-Italic.ttf'),url('../fonts/Philosopher-Regular.ttf')
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: font-chung;
+    line-height: 1.1;
+}
+.main
+{
+	width: 80%; margin: 0 auto;
+}
+/* End Dùng chung*/
+
+/* Menu */
+#menubar{
+	background:#a8843e;
+	width: 95%;height:75px; margin: 0 auto; 
+	margin-top: 0px;
+}
+.navbar {
+	width:80%;margin:0 auto;
+	overflow: hidden; 
+}
+.navbar a {
+    float: left; font-size: 16px;  color: white;
+    text-align: center; padding: 28px 20px;
+    text-decoration: none; }
+.dropdown {
+    float: left; overflow: hidden;
+}
+.dropdown .dropbtn {
+    font-size: 16px; border: none; 
+    color: white;  padding: 28px 20px;
+    background-color: inherit;
+    font-family: inherit; margin: 0; 
+ }
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #eae0c8;color:#a8843e; 
+ }
+.dropdown-content {
+   display: none;   /* Che thực đơn con*/
+    position: absolute; background-color: #f9f9f9;
+    min-width: 160px; z-index: 1;
+    box-shadow: 0px 8px 16px 0px #e6e6e6;
+}
+.dropdown-content a {
+    float: none; color: black;
+    padding: 12px 16px; text-decoration: none;
+    display: block; text-align: left; 
+  }
+.dropdown-content a:hover {
+    background-color: #ddd;	
+}
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+
+
+/* Slider */
+#slider{
+	width: 95%;
+	margin: 0 auto;
+	height: 686px;
+	position: relative;
+	animation: slider 8s infinite;
+	background: url("../images/banner0.jpg") ;
+	background-size: 100%;
+}
+@keyframes slider{
+	0%{opacity: 0.7; background: url("../images/banner0.jpg") no-repeat center;
+	background-size: 100%}
+	33%{opacity: 0.8;background: url("../images/banner1.jpg") no-repeat center ;
+	background-size: 100%}
+	66%{opacity: 0.9;background: url("../images/banner2.jpg") no-repeat center ;
+	background-size: 100%}
+	100%{opacity: 1;background: url("../images/banner3.jpg") no-repeat center ;
+	background-size: 100%}
+}
+
+#slider .title_right{
+	position: absolute;
+	margin-top: 3%;
+	right: 2%;
+	font-size: 50px;
+	color: white;
+	font-family: font_shop;
+	word-spacing: 10px;
+}
+#slider .title_left{
+	position: absolute;
+	margin-top: 20%;
+	left: 2%;
+	bottom: 2%;
+	font-family: font_khauhieu;
+	font-size: 100px;
+	color: #decba5;
+	font-weight:bold;
+}
+
+
+/* about */
+#about{
+	width: 95%;
+	margin: 0 auto;
+	
+	background-color:#FFFFFF;
+	padding: 4em 0;
+}
+#about .main .title-head-right{
+	position: relative;
+	margin: 20px 0;
+	text-align: right;
+}
+#about .main .title-head-right h4{
+	 color: #a6192e;
+	font-size: 3em;
+	position: absolute;
+	right: 2%;
+	bottom: 5%;
+}
+h3.title{
+	 color: #eee;
+	font-size: 5em;
+}
+#about .main h1{
+	font-size: 50px;
+	text-transform: uppercase;	
+}
+#about .noidung{
+	width: 45%;
+	padding: 0 2%;
+	float: left;
+}
+#about .noidung h1{
+	font-size: 5em;	
+}
+#about .noidung p{
+	font-size: 2em;
+	line-height: 1.5;
+	text-align: justify;
+}
+#about .hinh-about{
+	width: 45%;
+	float: right;
+}
+
+#about .hinh-about .mot,#about .hinh-about .hai,#about .hinh-about .ba{
+	
+	margin: 0 auto;
+	border: 3px inset #a6192e;
+	border-radius: 50%;
+	font-family: font_shop;
+	text-align: center;
+}
+#about .hinh-about .mot{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	animation: rotate_shop1 2s infinite; 
+}
+
+@keyframes rotate_shop1{
+	from{transform: rotateY(0deg)}
+	to{transform:rotateY(180deg)}
+}
+
+#about .hinh-about .hai{
+	width:130px;
+	height:130px;
+	margin: 0 auto;
+	animation: rotate_shop2 2s infinite;
+}
+
+@keyframes rotate_shop2{
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(-360deg)}
+}
+
+#about .hinh-about .ba{
+	width:100px;
+	height:100px;
+	margin: 0 auto;
+	animation: rotate_shop1 2s infinite;
+}
+
+.hinh-about .mot h1{
+	font-size:50px;
+	margin-top: 80px;
+}
+.hinh-about .hai h2{
+	font-size: 40px;
+	margin-top: 50px;
+}
+.hinh-about .ba h3{
+	font-size: 30px;
+	margin-top: 40px;
+}
+/* Service */
+#service{
+	width: 95%;
+	margin: 0 auto;
+	background-color: #decba5;
+	padding: 4em 0;
+}
+
+/* Những Câu chuyện */
+
+
+/* Team */
+
+
+/* gallery*/
+
+
+/* Bảng giá */
+
+
+/* Liên hệ*/
+
+
+
+/*footer*/
+#footer{
+	background-color:#decba5;
+	width: 95%;height:50px; margin: 0 auto;
+}
+#footer p {
+	color: #a6192e;
+	padding-top: 20px
+}
