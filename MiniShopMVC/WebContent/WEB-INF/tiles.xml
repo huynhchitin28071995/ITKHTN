@@ -78,4 +78,18 @@
 <put-attribute name="title" value="Dang ky" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/auth/register.jsp"/>
 </definition>
+
+<definition name="logon" extends="mainTemplate">
+<put-attribute name="title" value="Dang nhap" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/auth/logon.jsp"/>
+</definition>
+
+<definition name="checkOut" extends="mainTemplate">
+<put-attribute name="title" value="Check Out" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/checkout.jsp"/>
+</definition>
+<definition name="order-detail" extends="mainTemplate">
+<put-attribute name="title" value="Chi tiet don hang" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/order-detail.jsp"/>
+</definition>
 </tiles-definitions>
