@@ -41,13 +41,13 @@ h1, h2, h3, h4, h5, h6 {
 	width: 80%;
 	margin: 0 auto;
 }
-/* End Dùng chung*/
+/* End DĂ¹ng chung*/
 
 /* Menu */
 #menubar {
 	background: #a8843e;
 	width: 95%;
-	height: 75px;
+	height: auto;
 	margin: 0 auto;
 	margin-top: 0px;
 }
@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dropdown-content {
-	display: none; /* Che thực đơn con*/
+	display: none; /* Che thá»±c Ä‘Æ¡n con*/
 	position: absolute;
 	background-color: #f9f9f9;
 	min-width: 160px;
@@ -130,17 +130,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 33%{
-opacity
-:
-0.8;
-background
-:
-url("../images/banner1.jpg")
-no-repeat
-center;
-background-size
-:
-100%
+	opacity:0.8;
+	background:url("../images/banner1.jpg") no-repeat center;
+	background-size:100%
 }
 66%{
 opacity
@@ -164,27 +156,45 @@ background-size
 100%
 }
 }
-#slider .title_right {
-	position: absolute;
-	margin-top: 3%;
-	right: 2%;
-	font-size: 50px;
-	color: white;
-	font-family: font_shop;
-	word-spacing: 10px;
+.tenshop{
+position:absolute;
+margin-top: 3%; right: 2%; 
 }
-
-#slider .title_left {
-	position: absolute;
-	margin-top: 20%;
-	left: 2%;
-	bottom: 2%;
-	font-family: font_khauhieu;
-	font-size: 100px;
-	color: #decba5;
-	font-weight: bold;
+#slider .tenshop h1{
+font-size: 50px; font-family: font_shop;
+color: #decba5; word-spacing: 10px; }
+.khauhieu{
+position:absolute;
+margin-top: 20%; left: 2%; 
 }
-
+#slider .khauhieu h1{
+font-size: 100px; font-family: font_khauhieu;
+margin: 10px;color:#FFFFFF; }
+@media only screen and (max-width: 768px) {
+	#slider{
+	height:300px;
+	
+	}
+	#slider .tenshop .cafeshop{
+	font-size: 30px;
+	word-spacing: 5px;
+	}
+	#slider .khauhieu h1{
+		font-size: 70px;
+	}
+}
+@media only screen and (max-width:500px) {
+	#slider{
+	height:200px;
+	}
+	#slider .tenshop h1{
+	font-size: 20px;
+	word-spacing: 2px;
+	}
+	#slider .khauhieu h1{
+	font-size: 40px;
+	}
+}
 /* about */
 #about {
 	width: 95%;
@@ -223,9 +233,9 @@ h3.title {
 	float: left;
 }
 
-#about .noidung h1 {
-	font-size: 5em;
-}
+#about .noidung h5 {
+ color: #decba5; font-size: 2.7em;
+ padding: 0; margin: 0; }
 
 #about .noidung p {
 	font-size: 2em;
@@ -299,6 +309,40 @@ to {
 	font-size: 30px;
 	margin-top: 40px;
 }
+@media only screen and (max-width:768px){
+	h3.title{
+		font-size: 3.5em;
+		color: #eee;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	.title-head-right h4{
+		color: #a6192e;
+		font-size: 2em;
+		font-weight: 300;
+		position: absolute;
+		text-transform: uppercase;
+		top: 40%;
+		right: 1%;
+	}
+	.noidung h5{
+		color: #decba5;
+		font-size: 1.7em;
+		padding: 0;
+		margin: 0;
+	}
+}
+@media only screen and (max-width:500px) 
+{
+	#about .noidung {
+		width: 100%;
+	}
+	#about .hinh-about {
+		width: 100%;
+		float: left;
+	}
+}
+
 /* Service */
 #service {
 	width: 95%;
@@ -372,12 +416,38 @@ to {
 .serve-img img{
 	width: 100%;
 }
-
-
-
-
-
-/* Những Câu chuyện */
+@media only screen and (max-width:768px) {
+	h3.title {
+		color: #eee;
+		font-size: 3.5em;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	.title-head-left h4 {
+		color: #a6192e;
+		font-size: 2em;
+		font-weight: 300;
+		position: absolute;
+		text-transform: uppercase;
+		top: 40%;
+		right: 1%;
+	}
+	.service-grid h5 {
+		color: #a6192e;
+		font-size: 1.2em;
+		font-weight: 400;
+		margin: 0.5em 0 0 0;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.serve-left {
+		width: 100%;
+	}
+	.serve-img {
+		width: 100%;
+	}
+}
+/* Nhá»¯ng CĂ¢u chuyá»‡n */
 #cauchuyen{
 	width: 95%;
 	margin: 0 auto;
@@ -420,8 +490,14 @@ to {
 	margin: 1em 0;
 	font-size: 1em;
 }
-
-
+@media only screen and (max-width:768px) {
+	.cauchuyen-content h5 {
+		font-size: 1.7em;
+	}
+	.content {
+		width: 100%;
+	}
+}
 
 /* Team */
 #team{
@@ -453,6 +529,32 @@ padding: 3em 0 2em 0; }
 .view img:hover{
 	opacity: 1;
 }
+@media only screen and (max-width:768px) {
+	#team .view {
+		width: 45%;
+		height: 340px;
+		margin: 0 0.5%;
+		float: left;
+		text-align: center;
+		background-color: white;
+		box-shadow: 0px 10px 10px 3px #a07404;
+		margin-bottom: 25px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#team .view {
+		width: 98%;
+		height: 400px;
+		margin: 0 0.5%;
+		float: left;
+		text-align: center;
+		background-color: white;
+		box-shadow: 0px 10px 10px 3px #a07404;
+		margin-bottom: 25px;
+	}
+}
+
 /* gallery*/
 #gallery{
 	width: 95%;
@@ -493,11 +595,19 @@ padding: 3em 0 2em 0; }
 		bottom: 0;
 		height:100%;
 }
+@media only screen and (max-width:768px) {
+	#gallery .overlay .text {
+		font-size: 15px;
+	}
+}
 
+@media only screen and (max-width: 500px) {
+	#gallery .overlay .text {
+		font-size: 10px;
+	}
+}
 
-
-
-/* Bảng giá */
+/* Báº£ng giĂ¡ */
 #banggia{
 	width: 95%; margin: 0 auto;
 background-color: #decba5;padding: 4em 0;
@@ -536,8 +646,31 @@ td.right{
 width: 25%;
 text-align:right; 
 }
+@media only screen and (max-width:768px) {
+	#banggia .order h4 {
+		font-size: 16px;
+	}
+	#banggia .order tr {
+		height: 30px;
+	}
+	#banggia .order td {
+		font-size: 12px;
+	}
+}
 
-/* Liên hệ*/
+@media only screen and (max-width: 500px) {
+	#banggia .order1 {
+		width: 98%;
+		margin: 0 auto;
+		float: left;
+	}
+	#banggia .order2 {
+		width: 98%;
+		margin: 0 auto;
+		float: left;
+	}
+}
+/* LiĂªn há»‡*/
 #contact{
 	width:95%;
 	margin: 0 auto;
@@ -577,6 +710,22 @@ input[type="button"]{
 textarea{
 	width: 100%;
 }
+@media only screen and (max-width:768px){
+	.info h2 {
+		color: #decba5;
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.form {
+		width: 98%;
+	}
+	.info {
+		width: 98%;
+	}
+}
+
 /*footer*/
 #footer {
 	background-color: #decba5;
