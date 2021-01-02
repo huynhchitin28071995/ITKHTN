@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bài 18.2: JavaScript</title>
+    <meta charset="utf-8" /> 
+    <style>
+        table{
+                margin: 0px auto;
+				width:400px;
+                border:#33DA03 solid 1px;
+                background-color:#D9FED8;
+                border-collapse:collapse; color:#006600
+            }
+            tr{
+                height:50px;	
+            }
+            td{
+                border:#33DA03 solid 1px;
+            }
+			input[type="text"]
+			{
+				width:150px;
+			}
+    </style>
+    <script src="js/thuvien.js">  </script>
+</head> 
+<body>
+	<h2 style="color:#006600;text-align:center">Xếp loại cuối năm học</h2>
+	<form id="nhap">
+		<table>
+            <tr>
+              <td width="194">Điểm trung bình HKI: </td>
+              <td width="126"><input type="text" id="dtb1" ></td></tr>
+            <tr>
+              <td>Điểm trung bình HKII: </td>
+              <td><input type="text"  id="dtb2" ></td></tr>
+            <tr>
+			  <td>Điểm trung bình cuối năm: </td>
+			  <td><input type="text"  id="dtbcn" readonly></td>
+            </tr>			  
+			<tr>
+            	<td>Xếp loại: </td>
+                <td><label id="xl" style="color:#FF0000; font-weight:bold"> </label>
+                </td>
+            </tr>
+			<tr>
+            	<td colspan="2" align="center">
+            	<input type="button" name="dongy" value="Xuất xếp loại" onclick="dtbcn.value=xep_loai(dtb1.value,dtb2.value)"/>
+             	</td>
+            </tr>
+	  </table>
+</form>
+</body>
+</html>

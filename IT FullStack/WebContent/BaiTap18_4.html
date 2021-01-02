@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Bài 18.4</title>
+	<link href="style/Site_18_4.css" rel="stylesheet" type="text/css" />
+	<style>
+		#frame{
+			width: 700px; height: 700px;
+			margin: 0 auto;
+			border: 1px red solid;
+		}
+		#frame img{
+			width:560px;
+			border-radius: 50%;
+		}
+		.hinh{
+			width:560px;margin: 0px auto;
+		}
+		h1{
+			color:red;
+			text-shadow: 10px 10px 5px #f79494;
+		}
+	</style>
+	<script src="js/thuvien.js"></script>
+</head>
+
+<body>
+	<div id="frame" onClick="thaydoicauchuc()">
+		<h1 id="cauchuc">Happy New Year!!!</h1>
+		<div class="hinh">
+			<img src="images/NguoiTuyet.png" id="hinh" onMouseOver="HoverImage()" onMouseOut="OutImage()"/>
+		</div>
+	</div>
+</body>
+</html>

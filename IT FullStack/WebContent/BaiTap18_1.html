@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bài 18.1:JavaScript </title>
+	<meta charset="utf-8" /> 
+    <style>
+		table{
+			margin: 0px auto;
+			border:#33DA03 solid 1px;
+			background-color:#D9FED8;
+			border-collapse:collapse; color:#006600
+		}
+		tr{
+			height:50px;	
+		}
+		td{
+			border:#33DA03 solid 1px;
+		}
+	</style>
+    <script src="js/thuvien.js"></script>
+</head> 
+<body>
+	<form id="nhap">
+		<table cellspacing="0" cellpadding="3" >
+			<tr>
+            	<td>Nhập tên bạn: <input type="text" id="ten" ></td>
+             </tr>
+			<tr>
+                <td align="center"><input type="button" value="Xuất câu chào" onclick="XuatCauChao(ten.value)"/>
+                </td>
+            </tr>
+		</table>
+	</form>
+</body>
+</html>

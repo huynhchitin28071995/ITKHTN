@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Bài 18.5</title>
+	<link href="style/Site_18_5.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="header">
+		<h1>MV Nếu Biết Tôi lấy Chồng</h1>
+		<h2>Ca sĩ Thúy Huyền</h2>		
+	</div>
+	<div class="display-container">
+		<img class="mySlides" src="images/slide_00.jpg">
+		<img class="mySlides" src="images/slide_01.jpg">
+		<img class="mySlides" src="images/slide_02.jpg">
+		<img class="mySlides" src="images/slide_03.jpg">
+		<img class="mySlides" src="images/slide_04.jpg">
+				
+		<button class="move-button display-left" onclick="plusDivs(-1)">&#10094;</button>
+		<button class="move-button display-right" onclick="plusDivs(1)">&#10095;</button>
+	</div>
+	<script>
+		var slideIndex = 1;  //lưu trữ chỉ số slide hiện hành
+		function plusDivs(n) 
+		{
+			slideIndex += n; //tăng hoặc giảm chỉ số slide hiện hành
+			showDivs(slideIndex);  //gọi hàm hiển thị slide có chỉ số hiện hành
+		}
+		
+		function showDivs(n) 
+		{
+		  var i;
+		  var x = document.getElementsByClassName("mySlides"); //truy xuất các tag img có class mySlides
+		  if (n > x.length)  //khi chỉ số slide vượt quá tổng số slide thì cho về lại slide đầu tiên
+		  		slideIndex = 1;
+		
+		  if (n < 1)  //khi chỉ số slide nhỏ hơn slide đầu tiên thì cho về lại slide cuối cùng
+		  		slideIndex = x.length;
+		
+		  for (i = 0; i < x.length; i++)  //duyệt các hình (slide) để che hết 
+		  {
+			    x[i].style.display = "none"; 
+		  }
+		  x[slideIndex-1].style.display = "block";  //hiển thị slide (hình) hiện hành
+		}
+		showDivs(slideIndex);  //lần đầu tiên gọi hàm hiển thị slide
+	</script>
+</body>
+</html>
