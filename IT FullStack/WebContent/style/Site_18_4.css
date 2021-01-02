@@ -1,0 +1,40 @@
+body{
+	 font-family: sans-serif; font-size: 0.9em
+}
+.clearfix{
+	clear: both;
+}
+h1, h2{
+	color:#3333cc; text-align: center;
+	text-shadow: 2px 2px 5px #c1c1f0;
+}
+#header{
+	margin: 0 auto;
+}
+.mySlides {
+	display:none;
+}
+.display-container{
+	margin: 0 auto;padding:20px 0px;
+	max-width: 1140px;
+	position: relative;
+	border: double 4px #3333cc; 
+}
+.display-container img{
+	margin: 0 auto;
+}
+.move-button{
+	border:none;display:inline-block;
+	padding:8px 16px;vertical-align:middle;overflow:hidden;
+	text-align:center;cursor:pointer;
+	color: #000;background-color: #FFFFFF;
+}
+.move-button:hover{
+	color: #000;background-color:#99ccff;
+}
+.display-left{
+	position:absolute;top:50%;left:20px; 
+}
+.display-right{
+	position:absolute;top:50%;right:20px; 
+}
