@@ -20,7 +20,7 @@ import javaBeans.Author;
 public class AuthorController {
 	@RequestMapping("/xem")
 	public String author(Model model) {
-		//model.addAttribute("dsAuthor", AuthorBL.docTatCa());
+		// model.addAttribute("dsAuthor", AuthorBL.docTatCa());
 		return "author";
 	}
 
