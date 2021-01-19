@@ -25,7 +25,7 @@
 		<link>
 			<name>WebContent/DoAnCoffeShop.html</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Desktop/DoAnWebTinh/DoAnCoffeShop.html</locationURI>
+			<location>C:/Users/Admin.DESKTOP-AHFC17N/git/ITKHTN/DoAnCoffeeShop/WebContent/DoAnCoffeShop.html</location>
 		</link>
 		<link>
 			<name>WebContent/Style</name>
@@ -50,7 +50,7 @@
 		<link>
 			<name>WebContent/Style/Site_DoAnCoffeShop.css</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Desktop/DoAnWebTinh/Style/Site_DoAnCoffeShop.css</locationURI>
+			<location>C:/Users/Admin.DESKTOP-AHFC17N/git/ITKHTN/DoAnCoffeeShop/WebContent/Style/Site_DoAnCoffeShop.css</location>
 		</link>
 		<link>
 			<name>WebContent/css/bootstrap-grid.css</name>
