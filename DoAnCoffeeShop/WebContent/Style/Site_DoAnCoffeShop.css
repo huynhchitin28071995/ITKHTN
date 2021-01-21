@@ -4,20 +4,81 @@
 #navbar{
 	border-radius: 0 0 50px 50px;
 	padding: 5px 50px;
+	background-color: black;
 }
+/* @keyframes br{ */
+/* 	from {border-radius: 0%;} */
+/*   to {border-radius: 10%;} */
+/* } */
 #navbar ul li{
 	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight:bold;
+}
+#navbar ul li a{
+	transition: border-radius 0.5s;
+	}
+#navbar ul li a:hover{
+	color: white;
+	background-color: #ff8000;
+/* 	animation-name: br; */
+/*   	animation-duration: 0.5s; */
+	border-radius: 50%;
+	color: black;
 }
 #navbar form input{
 	font-size: 0.8em;
 }
 #navbar form button{
 	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: gray 1px solid;
+	color: gray;
+}
+#navbar form button:hover{
+	
+	background-color: #ff8000;
+	color: black;
+	border: #ff8000 solid 1px;
+}
+#navbar .brand{
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/*Trich dan cau noi*/
+#Quotes .someQuotes h3{
+	font-family:monospace;
+	font-style: italic;
+	font-weight: lighter;
+	quotes:initial;
+}
+#Quotes .someQuotes h4{
+	font-family:monospace;
+	font-style: italic;
+	font-weight: lighter;
+	quotes:initial;
+	margin-right: 20%;
 }
 #about .about-row-1{
-	background: url("../images/about-bg.jpg") bottom no-repeat;
-	background-size: cover;
-	padding: 20px 0;
+	background: url("../images/composition-homely-festive-atmosphere.jpg") bottom no-repeat;
+	background-size: 98.43%;
+	padding: 10px 10px;
+	position:relative;
+}
+#about .about-row-1::before{
+	 background: white;
+	 z-index: 1;
+	 opacity: 0.6;
+	 content: "";
+	 height: 100%;
+   		left: 0;
+   	 position: absolute;
+    top: 0;
+    width: 100%;
+}
+#about .about-row-1 div{
+	z-index: 2;
 }
 #Quotes .someQuotes{
 	background: url("../images/qt-bg.jpg") no-repeat center;
@@ -94,5 +155,9 @@
 }
 #navbar ul li, #navbar button, #navbar input{
 	font-size: 1.2em;
+}
+
+#Quotes .someQuotes h4{	
+	margin-right: 2%;
 }
 }

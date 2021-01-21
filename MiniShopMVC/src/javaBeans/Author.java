@@ -1,10 +1,11 @@
 package javaBeans;
 // Generated Dec 23, 2020 9:01:02 AM by Hibernate Tools 5.1.8.Final
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
