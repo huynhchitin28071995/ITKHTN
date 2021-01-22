@@ -60,6 +60,14 @@
 	quotes:initial;
 	margin-right: 20%;
 }
+#Quotes .someQuotes{
+	background: url("../images/cup-coffee-wooden-tray.jpg") no-repeat center;
+	background-attachment: fixed;
+	padding: 200px 0;
+
+}
+
+/*about*/
 #about .about-row-1{
 	background: url("../images/composition-homely-festive-atmosphere.jpg") bottom no-repeat;
 	background-size: 98.43%;
@@ -80,12 +88,7 @@
 #about .about-row-1 div{
 	z-index: 2;
 }
-#Quotes .someQuotes{
-	background: url("../images/qt-bg.jpg") no-repeat center;
-	background-attachment: fixed;
-	padding: 200px 0;
 
-}
 #menus a{
 	color:white;
 }
@@ -95,7 +98,7 @@
 	text-align: center;
 }*/
 #gallery .image-grids img{
-	height: 250px;
+	height: 300px;
 	width: 100%;
 	margin: 5px;
 }
