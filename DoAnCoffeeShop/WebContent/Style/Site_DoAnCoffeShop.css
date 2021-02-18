@@ -6,10 +6,7 @@
 	padding: 5px 50px;
 	background-color: black;
 }
-/* @keyframes br{ */
-/* 	from {border-radius: 0%;} */
-/*   to {border-radius: 10%;} */
-/* } */
+
 #navbar ul li{
 	font-size: 0.8em;
 	text-transform: uppercase;
@@ -21,8 +18,7 @@
 #navbar ul li a:hover{
 	color: white;
 	background-color: #ff8000;
-/* 	animation-name: br; */
-/*   	animation-duration: 0.5s; */
+
 	border-radius: 50%;
 	color: black;
 }
