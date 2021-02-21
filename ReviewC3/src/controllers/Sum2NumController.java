@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Sum2NumController
  */
-@WebServlet("/Sum2NumController")
+@WebServlet("/sumtwonumbers.html")
 public class Sum2NumController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

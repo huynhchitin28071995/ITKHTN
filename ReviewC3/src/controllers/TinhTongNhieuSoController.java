@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class TinhTongNhieuSoController
  */
-@WebServlet("/TinhTongNhieuSoController")
+@WebServlet("/summultinumbers.html")
 public class TinhTongNhieuSoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -16,15 +16,15 @@
 	</div>
 	<div class="sidebar">
 		<ul>
-			<li><a href="helloworld.html">Hello World</a></li>
-			<li><a href="sumtwonumbers.html">Sum Two Numbers</a></li>
-			<li><a href="summultinumbers.html">Sum Multiple Numbers</a></li>
-			<li><a href="register.jsp">Register</a></li>
-			<li><a href="login.jsp">Login</a></li>
-			<li><a href="multiplicationtable.jsp">Multiplication Table</a></li>
-			<li><a href="upload.html">Upload Image</a></li>
-			<li><a href="upload/multi.html">Multiple Upload Image</a></li>
-			<li><a href="template.jsp">Template Example</a></li>
+			<li><a href="${pageContext.request.contextPath}/helloworld.html">Hello World</a></li>
+			<li><a href="${pageContext.request.contextPath}/sumtwonumbers.html">Sum Two Numbers</a></li>
+			<li><a href="${pageContext.request.contextPath}/summultinumbers.html">Sum Multiple Numbers</a></li>
+			<li><a href="${pageContext.request.contextPath}/views/register.jsp">Register</a></li>
+			<li><a href="${pageContext.request.contextPath}/views/login.jsp">Login</a></li>
+			<li><a href="${pageContext.request.contextPath}/views/multiplicationtable.jsp">Multiplication Table</a></li>
+			<li><a href="${pageContext.request.contextPath}/upload.html">Upload Image</a></li>
+			<li><a href="${pageContext.request.contextPath}/upload/multi.html">Multiple Upload Image</a></li>
+			<li><a href="${pageContext.request.contextPath}/views/template.jsp">Template Example</a></li>
 			<li><a href="category.html">Category</a></li>
 		</ul>
 	</div>

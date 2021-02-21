@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloController
  */
-@WebServlet("/")
+@WebServlet("/helloworld.html")
 public class HelloController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
