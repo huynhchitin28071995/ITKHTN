@@ -77,3 +77,6 @@ trong spring-security.xml, spring se tu thuc hien xet duyet dang nhap.
 - khai bao duong dan theo role: /admin/* thi admin se duoc vao trang. /user/* thi user duoc xem trang, do spring-security quan ly.
 - chinh sua role trong database/sql.
 - khong dung duoc method post.
+
+
+https://sre.google/books/
