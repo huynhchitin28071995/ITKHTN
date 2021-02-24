@@ -26,6 +26,7 @@
 			<li><a href="${pageContext.request.contextPath}/upload/multi.html">Multiple Upload Image</a></li>
 			<li><a href="${pageContext.request.contextPath}/views/template.jsp">Template Example</a></li>
 			<li><a href="category.html">Category</a></li>
+			<li><a href="${pageContext.request.contextPath}/sendmail.html">Send email</a></li>
 		</ul>
 	</div>
 	<div class="main">
