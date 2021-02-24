@@ -1,4 +1,4 @@
-package model;
+package businessLogics;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,16 +17,11 @@ public class CSDL {
 			Class.forName(DRIVER);
 			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return connection;
 	}
 
-	public static void main(String[] args) {
-		getKetNoi();
-	}
 }

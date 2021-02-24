@@ -27,6 +27,7 @@
 			<li><a href="${pageContext.request.contextPath}/views/template.jsp">Template Example</a></li>
 			<li><a href="category.html">Category</a></li>
 			<li><a href="${pageContext.request.contextPath}/sendmail.html">Send email</a></li>
+			<li><a href="${pageContext.request.contextPath}/admin/publisher.html">Publisher</a></li>
 		</ul>
 	</div>
 	<div class="main">
