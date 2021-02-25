@@ -6,7 +6,7 @@ public class Test {
 	public static void main(String[] args) {
 		Publisher p = new Publisher.Builder().build();
 		System.out.println(p.toString()); // can see that there is no way to alter p's fields
-		Publisher p1 = new Publisher.Builder().publisherId(14).publisherName("Test").build();
+		Publisher p1 = new Publisher.Builder().publisherName("This is the new publisher").build();
 		System.out.println(p1.toString());
 		System.out.println(p.equals(p1));
 		Publisher p2 = new Publisher.Builder().build();
@@ -17,8 +17,15 @@ public class Test {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-
+		
+		//Test add publisher
+//		PublisherBL.addPublisher(p1);
 		// test PublisherBL
-		PublisherBL.getPublishers().forEach(publisher -> System.out.println(publisher.getPublisherName()));
+		PublisherBL.editPublisher(19,"This is the new publisher");
+		PublisherBL.getPublishers().forEach(publisher -> System.out.println(publisher.toString())); //19: This is the new publisher
+		System.out.println(PublisherBL.getPublisher(19).toString()); //Must print 'This is the new publisher'
+		
+		PublisherBL.editPublisher(19, "New publisher name");
+		System.out.println(PublisherBL.getPublisher(19).toString()); //Must print 'New publisher name'
 	}
 }

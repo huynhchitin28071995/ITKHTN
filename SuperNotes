@@ -1,7 +1,7 @@
 Note cho bai tap Module 3
 -trong trang jsp, dat name cua cac element trung` nhau, trong java hoac servlet se co phuong thuc request.getParameterValues("name") tra ve 1 mang cac gia tri co name="name";
 -copy 2 thu vien trong student: mail, javax.activation (bai 3.7)
-- lam xong admin/publisher.html. Lam tiep add publisher
+- lam xong admin/publisher.html. Lam tiep add publisher. New idea: put publishers into a map.
 - phai co thu vien jakarta.activation-1.2.1.jar moi gui duoc mail khi lam o nha.
 - Bai tap upload: vi upload len ...../views/upload/* nen trong index.jsp phai de link hinh anh la src="${pageContext.request.contextPath}/views/upload/${img}".
 Note cho bai 4,9,10 quĂ„â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â¡Ä‚â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚ÂºÄ‚â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â£n lĂ„â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬Â Ä‚Â¢Ă¢â€�Â¬Ă¢â€�Â¢Ä‚â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â½ bĂ„â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬Â Ä‚Â¢Ă¢â€�Â¬Ă¢â€�Â¢Ä‚â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â¡n sĂ„â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â¡Ä‚â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â»Ä‚â€�Ă¢â‚¬ï¿½Ä‚Â¢Ă¢â€�Â¬Ă¯Â¿Â½Ă„â€�Ă¢â‚¬ï¿½Ä‚â€�Ă‚Â¯a
