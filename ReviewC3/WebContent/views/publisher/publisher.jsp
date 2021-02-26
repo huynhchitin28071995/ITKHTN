@@ -21,8 +21,8 @@
 		<td><input type="checkbox" value="${publisher.publisherId }"></td>
 		<td>${publisher.publisherId }</td>
 		<td>${publisher.publisherName }</td>
-		<td><a href="${pageContext.request.contextPath }/publisher/edit.html"><img src="${pageContext.request.contextPath }/images/edit.png"></a>
-		<td><a href="${pageContext.request.contextPath }/publisher/del.html"><img src="${pageContext.request.contextPath }/images/trash.png"></a>
+		<td><a href="${pageContext.request.contextPath }/publisher/edit.html?publisherId=${publisher.publisherId}"><img src="${pageContext.request.contextPath }/images/edit.png"></a>
+		<td><a href="${pageContext.request.contextPath }/publisher/del.html?publisherId=${publisher.publisherId}"><img src="${pageContext.request.contextPath }/images/trash.png"></a>
 		</tr>
 		
 		</c:forEach>

@@ -22,7 +22,7 @@ public class PublisherBL {
 			dsPublisher = new ArrayList<Publisher>();
 			try (Connection connection = CSDL.getKetNoi()) {
 				Statement stm = connection.createStatement();
-				rs = stm.executeQuery("SELECT * FROM minishop.publisher");
+				rs = stm.executeQuery("SELECT * FROM minishop.Publisher");
 				while (rs.next()) {
 					Publisher p = new Publisher.Builder().publisherId(rs.getInt("PublisherId"))
 							.publisherName(rs.getString("PublisherName")).build();
@@ -39,7 +39,7 @@ public class PublisherBL {
 
 	public static void addPublisher(Publisher p) {
 		try (Connection c = CSDL.getKetNoi()) {
-			String sql = "INSERT INTO minishop.publisher(PublisherName) VALUES(?)";
+			String sql = "INSERT INTO minishop.Publisher(PublisherName) VALUES(?)";
 			PreparedStatement pstm = c.prepareStatement(sql);
 			pstm.setString(1, p.getPublisherName());
 			pstm.executeUpdate();
@@ -69,7 +69,7 @@ public class PublisherBL {
 	public static void editPublisher(int publisherId, String newPublisherName) {
 		Publisher p = getPublisher(publisherId); 
 		if (p != null) {
-			String sql = "UPDATE minishop.publisher SET PublisherName=? WHERE PublisherId=?";
+			String sql = "UPDATE minishop.Publisher SET PublisherName=? WHERE PublisherId=?";
 			try(Connection c = CSDL.getKetNoi()){
 				PreparedStatement pstm = c.prepareStatement(sql);
 				pstm.setString(1,newPublisherName);

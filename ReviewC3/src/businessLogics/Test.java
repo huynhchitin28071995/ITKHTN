@@ -21,6 +21,7 @@ public class Test {
 		//Test add publisher
 //		PublisherBL.addPublisher(p1);
 		// test PublisherBL
+		System.out.println(PublisherBL.getPublisher(19).toString()); //Must print 'Test'
 		PublisherBL.editPublisher(19,"This is the new publisher");
 		PublisherBL.getPublishers().forEach(publisher -> System.out.println(publisher.toString())); //19: This is the new publisher
 		System.out.println(PublisherBL.getPublisher(19).toString()); //Must print 'This is the new publisher'
