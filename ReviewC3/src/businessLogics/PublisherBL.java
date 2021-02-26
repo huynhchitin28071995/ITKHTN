@@ -16,7 +16,6 @@ public class PublisherBL {
 	private static ResultSet rs;
 
 	private static List<Publisher> dsPublisher;
-	Map<Integer, String> publisherMap = new Hashtable<Integer, String>();
 	public static List<Publisher> getPublishers() {
 		if (dsPublisher == null) {
 			dsPublisher = new ArrayList<Publisher>();
@@ -42,10 +41,13 @@ public class PublisherBL {
 			String sql = "INSERT INTO minishop.Publisher(PublisherName) VALUES(?)";
 			PreparedStatement pstm = c.prepareStatement(sql);
 			pstm.setString(1, p.getPublisherName());
+			
 			pstm.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		dsPublisher = null;
 		System.out.println("Added " + p.toString());
 	}
 
@@ -83,5 +85,26 @@ public class PublisherBL {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public static boolean deletePublisher(int publisherId) {
+		String sql = "DELETE FROM minishop.Publisher WHERE PublisherId = ?";
+		try(Connection c = CSDL.getKetNoi()) {
+			PreparedStatement pstm = c.prepareStatement(sql);
+			pstm.setInt(1, publisherId);
+			dsPublisher.remove(getPublisher(publisherId));
+			return pstm.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public static boolean multiDels(List<Integer> publisherIds) {
+		for (int i : publisherIds) {
+			deletePublisher(i);
+		}
+		return true;
+		
 	}
 }

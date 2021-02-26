@@ -28,5 +28,8 @@ public class Test {
 		
 		PublisherBL.editPublisher(19, "New publisher name");
 		System.out.println(PublisherBL.getPublisher(19).toString()); //Must print 'New publisher name'
+		
+		PublisherBL.deletePublisher(19);
+//		System.out.println(PublisherBL.getPublisher(19).toString()); //Must be 'null'
 	}
 }

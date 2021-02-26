@@ -1,6 +1,8 @@
 package controllers;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import businessLogics.PublisherBL;
 
-@WebServlet("/admin/publisher.html")
+@WebServlet({"/admin/publisher.html","/publisher/dels.html"})
 public class PublisherController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -26,6 +28,12 @@ public class PublisherController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String[] publisherIds = request.getParameterValues("boxes");
+		List<Integer> list = new LinkedList<Integer>();
+		for (String id : publisherIds) {
+			list.add(Integer.parseInt(id));
+		}
+		PublisherBL.multiDels(list);
 		doGet(request, response);
 	}
 
