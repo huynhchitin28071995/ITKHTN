@@ -33,7 +33,7 @@ public class Test {
 //		System.out.println(PublisherBL.getPublisher(19).toString()); //Must be 'null'
 	
 		//Test ProductBL
-//		ProductBL.getProducts().forEach(p -> System.out.println(p.toString()));
+		ProductBL.getProducts().forEach(p -> System.out.println(p.toString()));
 	
 	}
 }
