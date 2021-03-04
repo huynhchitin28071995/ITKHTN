@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Tính tổng 2 số</title>
-</head>
-<body>
+<%@ taglib uri="/WEB-INF/template" prefix="me"%>
+<me:bg title="Tổng 2 số">
+<jsp:attribute name="content">
 <form>
+
 <table>
 <tr>
 <td>Số 1:</td>
@@ -19,7 +16,7 @@
 </tr>
 <tr>
 <td colspan="2"><button>Cộng</button></td>
-</table>
+</tr></table>
 </form>
-</body>
-</html>
+</jsp:attribute>
+</me:bg>

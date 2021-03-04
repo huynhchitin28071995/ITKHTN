@@ -14,18 +14,19 @@ Products
 <div class="products">
 <c:forEach items="${dsProduct }" var="p">
 <div class="col-3">
-<div class="item">
-<img src="${pageContext.request.contextPath }/upload/${p.imageURL}">
-</div>
+<div class="item" style='height: 400px'>
+<img src="${pageContext.request.contextPath }/upload/${p.imageURL}" style="height: 80%">
 <div class="info"><a>${p.title }</a></div>
+</div>
+
 </div>
 </c:forEach>
 <div class="clear"></div>
 </div>
 <ul class="pagination">
-<c:forEach begin="1" end="${n }" step="1" var="i">
+<c:forEach begin="1" end="${numOfPages }" step="1" var="i">
 <li class="page-item">
-<a class="page-link" href="${pageContext.request.contextPath}/home.html?p=${i}">
+<a class="page-link" href="${pageContext.request.contextPath}/home.html?page=${i}">
 ${i }
 </a>
 </li>

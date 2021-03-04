@@ -1,16 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Hello world</title>
-</head>
-<body>
+<%@ taglib uri="/WEB-INF/template" prefix="me" %>
 hello world
+<me:bg title="Hello World">
+<jsp:attribute name="content">
 <br>
-<a href="Sum2NumController">Tính tổng 2 số</a>
+<a href="${pageContext.request.contextPath }/sumtwonumbers.html">Tính tổng 2 số</a>
 <br>
-<a href="TinhTongNhieuSoController">Tính tổng Nhiều số</a>
-</body>
-</html>
+<a href="${pageContext.request.contextPath }/summultinumbers.html">Tính tổng Nhiều số</a>
+
+</jsp:attribute>
+</me:bg>
