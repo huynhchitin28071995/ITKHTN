@@ -34,7 +34,7 @@ public class Test {
 	
 		//Test ProductBL
 //		Test dsProduct if it's a list
-//		ProductBL.getProducts().forEach(p -> System.out.println(p.toString()));
+		ProductBL.getProducts().forEach(p -> System.out.println(p.toString()));
 	
 	}
 }
