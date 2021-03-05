@@ -22,6 +22,10 @@
 <put-attribute name="title" value="Trang Home" type="string"/>
 <put-attribute name="noiDung" value="category"/>
 </definition>
+<definition name="publisher" extends="mainTemplate">
+<put-attribute name="title" value="Trang Publisher" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/publisher.jsp"/>
+</definition>
 <definition name="author" extends="mainTemplate">
 <put-attribute name="title" value="Trang danh sách Author" type="string"/>
 <put-attribute name="noiDung" value="/WEB-INF/views/author.jsp"/>
