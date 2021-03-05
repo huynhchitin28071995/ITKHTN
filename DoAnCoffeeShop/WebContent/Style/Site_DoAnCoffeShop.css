@@ -1,10 +1,10 @@
 .title{
 	margin: 20px auto;
 }
-#navbar{
+#navbar {
 	border-radius: 0 0 50px 50px;
 	padding: 5px 50px;
-	background-color: black;
+	background-color: #664400;
 }
 
 #navbar ul li{
@@ -16,9 +16,7 @@
 	transition: border-radius 0.5s;
 	}
 #navbar ul li a:hover{
-	color: white;
 	background-color: #ff8000;
-
 	border-radius: 50%;
 	color: black;
 }
@@ -32,12 +30,11 @@
 	border: gray 1px solid;
 	color: gray;
 }
-#navbar form button:hover{
-	
-	background-color: #ff8000;
-	color: black;
-	border: #ff8000 solid 1px;
-}
+	#navbar form button:hover, #footer .item button:hover{
+		background-color: #ff8000;
+		color: black;
+		border: #ff8000 solid 1px;
+	}
 #navbar .brand{
 	font-weight: bold;
 	text-transform: uppercase;
@@ -85,14 +82,20 @@
 	z-index: 2;
 }
 
-#menus a{
-	color:white;
+#menus a {
+	color: white;
+	font-weight: 600;
+	transition: border-radius 0.5s;
 }
-
-/*#menus #v-pills-tab {
-	padding: 15px 0;
-	text-align: center;
-}*/
+#menus .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+	
+	background-color: #ff8000;
+}
+#menus a:hover {
+	background-color: #ff8000;
+	border-radius: 50%;
+	color: black;
+}
 /*Gallery*/
 #gallery .image-grids img{
 	height: 300px;
@@ -123,24 +126,24 @@
 	background-image: url("../images/footer-bg.jpg");
 	background-attachment: scroll;
 	background-clip: initial;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: black;
 	background-origin: initial;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 }
-.bg-f::before {
-    background: #010101;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-	opacity: 0.8;
-}
+	.bg-f::before {
+		background: #4d3300;
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+		opacity: 0.9;
+	}
 #footer .icon{
 	font-size: 2em;
 	text-align: center;
@@ -155,9 +158,12 @@
 	text-transform: uppercase;
 	text-align:center;
 }
-#footer .item button{
-	margin: 20px auto;
-}
+	#footer .item button {
+		margin: 20px auto;
+		background-color: #990000;
+		color: white;
+		font-weight: bold;
+	}
 
 @media only screen and (max-width: 600px) {
 	#menus a {

@@ -5,13 +5,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import models.Product;
 
 public class ProductBL {
 	private static List<Product> dsProduct = new ArrayList<Product>();
-
+//	private static Map<Integer, Product> mapProduct = new HashMap<Integer, Product>();
 	public static List<Product> getProducts() {
 		if(dsProduct.isEmpty() ) {
 			String sql = "SELECT * FROM minishop.Product";
@@ -36,11 +38,17 @@ public class ProductBL {
 							.year(rs.getInt("Year"))
 							.build();
 					dsProduct.add(p);
+					
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		} 
 		return dsProduct;
+	}
+	
+	public static Product getProductById(int id){
+		Product p = dsProduct.get(id);
+		return p;
 	}
 }
