@@ -13,24 +13,14 @@ import javax.servlet.http.HttpSession;
 import businessLogics.GioHangBL;
 import javaBeans.SanPhamMua;
 
-/**
- * Servlet implementation class ThemVaoGio
- */
 @WebServlet("/ThemVaoGioServlet")
 public class ThemVaoGioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ThemVaoGioServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idsp, slm;
 		idsp = Integer.parseInt(request.getParameter("idsp"));
@@ -47,16 +37,10 @@ public class ThemVaoGioServlet extends HttpServlet {
 		}
 		
 		gioHang.them(idsp, slm);
-		//List<SanPhamMua> dsspMua = gioHang.danhSachSanPhamMua();
-		//session.setAttribute("dsspMua", dsspMua);
 		response.sendRedirect("trang-chu.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

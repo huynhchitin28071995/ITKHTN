@@ -13,25 +13,14 @@ import javax.servlet.http.HttpSession;
 import businessLogics.GioHangBL;
 import javaBeans.SanPhamMua;
 
-/**
- * Servlet implementation class GioHangServlet
- */
-@WebServlet("/GioHangServlet")
+@WebServlet({"/GioHangServlet"})
 public class GioHangServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public GioHangServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -45,17 +34,13 @@ public class GioHangServlet extends HttpServlet {
 			}
 			session.setAttribute("thanhTien", thanhTien);
 		}
-
+//		response.sendRedirect(request.getContextPath() + "/trang-gio-hang.jsp");
 		request.getRequestDispatcher("/Views/gio-hang.jsp").include(request, response);
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 
 	}

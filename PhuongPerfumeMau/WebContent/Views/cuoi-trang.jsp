@@ -24,8 +24,8 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Đăng Nhập</h2>
                         <form action="DangNhapServlet" name="frmDangNhap" method="post">
-                        	<input type="text" name="email" value="" placeholder="Nhập email">
-                         	<input type="password" name="password" value="" placeholder="Nhập mật khẩu">
+                        	<input type="text" name="email" value="bichle@gmail.com" placeholder="Nhập email">
+                         	<input type="password" name="password" value="bichle" placeholder="Nhập mật khẩu">
                         	<input type="submit" name="btnDangNhap" value="Đăng Nhập">
                         </form>                      
                     </div>
@@ -33,7 +33,7 @@
                 
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
-                        <h2 class="footer-wid-title">Đăng nhập</h2>
+                        <h2 class="footer-wid-title">Sản phẩm</h2>
                         <ul>
                             <li><a href="#">Mobile Phone</a></li>
                             <li><a href="#">Home accesseries</a></li>
