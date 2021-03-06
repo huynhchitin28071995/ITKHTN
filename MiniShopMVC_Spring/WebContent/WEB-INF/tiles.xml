@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+<definition name="mainTemplate" template="/WEB-INF/views/home.jsp">
+<put-attribute name="title" value="Trang mainTemplate" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/trang-chu.jsp" />
+</definition>
+<definition name="productTemplate" template="/WEB-INF/views/product-template.jsp">
+<put-attribute name="title" value="Trang product template" type="string"></put-attribute>
+<put-attribute name="noiDung" value="/WEB-INF/views/product.jsp"/>
+</definition>
+<definition name="synthesizedTemplate" template="/WEB-INF/views/home.jsp">
+<put-attribute name="title" value="Trang product template" type="string"></put-attribute>
+<put-attribute name="noiDung" value="productTemplate"/>
+</definition>
+
+
+
+<definition name="home" extends="synthesizedTemplate">
+<put-attribute name="title" value="Trang Home" type="string"/>
+<put-attribute name="noiDung" value="category"/>
+</definition>
+<definition name="publisher" extends="mainTemplate">
+<put-attribute name="title" value="Trang Publisher" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/publisher.jsp"/>
+</definition>
+<definition name="author" extends="mainTemplate">
+<put-attribute name="title" value="Trang danh sách Author" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/author.jsp"/>
+</definition>
+<definition name="add-author" extends="mainTemplate">
+<put-attribute name="title" value="Trang danh sách Author" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/add-author.jsp"/>
+</definition>
+<definition name="edit-author" extends="mainTemplate">
+<put-attribute name="title" value="Trang danh sách Author" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/edit-author.jsp"/>
+</definition>
+<definition name="category" extends="productTemplate">
+<put-attribute name="title" value="Trang Category" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/category.jsp"/>
+</definition>
+<definition name="add-category" extends="productTemplate">
+<put-attribute name="title" value="Trang Thêm Category" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/add-category.jsp"/>
+</definition>
+
+<definition name="productList" extends="productTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/product.jsp"/>
+</definition>
+
+<definition name="product" extends="mainTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="productList"/>
+</definition>
+<definition name="chi-tiet-product.ND" extends="productTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/chi-tiet-product.jsp"/>
+</definition>
+<definition name="chi-tiet-product" extends="mainTemplate">
+<put-attribute name="title" value="Trang product" type="string"/>
+<put-attribute name="noiDung" value="chi-tiet-product.ND"/>
+</definition>
+<definition name="xem-chim" extends="mainTemplate">
+<put-attribute name="title" value="Xem chim" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/xem-chim.jsp"/>
+</definition>
+<definition name="dang-nhap" extends="mainTemplate">
+<put-attribute name="title" value="Dang nhap" type="string"></put-attribute>
+<put-attribute name="noiDung" value="/WEB-INF/views/dang-nhap.jsp"></put-attribute>
+</definition>
+
+<definition name="cart" extends="mainTemplate">
+<put-attribute name="title" value="Gio Hang" type="string"></put-attribute>
+<put-attribute name="noiDung" value="/WEB-INF/views/cart.jsp"></put-attribute>
+</definition>
+
+<definition name="register" extends="mainTemplate">
+<put-attribute name="title" value="Dang ky" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/auth/register.jsp"/>
+</definition>
+
+<definition name="logon" extends="mainTemplate">
+<put-attribute name="title" value="Dang nhap" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/auth/logon.jsp"/>
+</definition>
+
+<definition name="checkOut" extends="mainTemplate">
+<put-attribute name="title" value="Check Out" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/checkout.jsp"/>
+</definition>
+<definition name="order-detail" extends="mainTemplate">
+<put-attribute name="title" value="Chi tiet don hang" type="string"/>
+<put-attribute name="noiDung" value="/WEB-INF/views/order-detail.jsp"/>
+</definition>
+</tiles-definitions>
