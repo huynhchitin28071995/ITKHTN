@@ -14,5 +14,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="src/" kind="src" path=""/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
