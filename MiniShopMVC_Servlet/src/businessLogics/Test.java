@@ -1,7 +1,5 @@
 package businessLogics;
 
-import models.Publisher;
-
 public class Test {
 	public static void main(String[] args) {
 //		Publisher p = new Publisher.Builder().build();
@@ -17,8 +15,8 @@ public class Test {
 //		} catch (CloneNotSupportedException e) {
 //			e.printStackTrace();
 //		}
-		
-		//Test add publisher
+
+		// Test add publisher
 //		PublisherBL.addPublisher(p1);
 		// test PublisherBL
 //		System.out.println(PublisherBL.getPublisher(19).toString()); //Must print 'Test'
@@ -31,10 +29,10 @@ public class Test {
 //		
 //		PublisherBL.deletePublisher(19);
 //		System.out.println(PublisherBL.getPublisher(19).toString()); //Must be 'null'
-	
-		//Test ProductBL
+
+		// Test ProductBL
 //		Test dsProduct if it's a list
-		ProductBL.getProducts().forEach(p -> System.out.println(p.toString()));
-	
+		ProductBL.getProducts(0, 5).forEach(p -> System.out.println(p.toString()));
+
 	}
 }
