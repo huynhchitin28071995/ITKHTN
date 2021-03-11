@@ -8,6 +8,7 @@ public class Test {
 		Scanner sc = new Scanner(System.in);
 		WeatherData wd = new WeatherData();
 		CurrentConditionDisplay ccd = new CurrentConditionDisplay(wd);
+		HeatIndexDisplay hid = new HeatIndexDisplay(wd);
 		while (true) {
 			System.out.println("Please insert Humidity: ");
 			wd.setHumidity(sc.nextFloat());
