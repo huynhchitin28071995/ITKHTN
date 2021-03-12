@@ -13,13 +13,16 @@ Products
 </div>
 <div class="products">
 <c:forEach items="${dsProduct }" var="p">
+
 <div class="col-3">
+<a href="${pageContext.request.contextPath }/product-detail.html?productId=${p.productId}">
 <div class="item" style='height: 400px'>
 <img src="${pageContext.request.contextPath }/upload/${p.imageURL}" style="height: 80%">
-<div class="info"><a>${p.title }</a></div>
+<div class="info">${p.title }</div>
+</div>
+</a>
 </div>
 
-</div>
 </c:forEach>
 <div class="clear"></div>
 </div>
