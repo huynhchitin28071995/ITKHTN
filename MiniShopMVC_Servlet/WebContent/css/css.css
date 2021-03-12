@@ -10,6 +10,9 @@ a{
 	text-decoration: none;
 	color: #337ab7;
 }
+a:hover{
+	font-weight: bold;
+}
 li{
 	list-style-type: none;
 }

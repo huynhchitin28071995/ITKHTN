@@ -27,6 +27,22 @@ public class ProductBL {
 		return rs;
 	}
 
+	private static List<Product> getListByQuery(String sql) {
+		ResultSet rs = null;
+		List<Product> dsProduct = new ArrayList<Product>();
+		try (Connection connection = CSDL.getKetNoi()) {
+			Statement stm = connection.createStatement();
+			rs = stm.executeQuery(sql);
+			while (rs.next()) {
+				dsProduct.add(buildProduct(rs));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return dsProduct;
+
+	}
+
 	private static Product buildProduct(ResultSet rs) {
 		try {
 			Product p = new Product.Builder().authorId(rs.getInt("AuthorId")).categoryId(rs.getInt("CategoryId"))
@@ -44,19 +60,8 @@ public class ProductBL {
 	}
 
 	public static List<Product> getProducts(int start, int numOfProductPerPage) {
-		List<Product> dsProduct = new ArrayList<Product>();
 		String sql = "SELECT * FROM minishop.Product LIMIT " + start + "," + numOfProductPerPage;
-
-		try (ResultSet rs = getDataByQuery(sql);) {
-			while (rs.next()) {
-				dsProduct.add(buildProduct(rs));
-			}
-			connection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return dsProduct;
+		return getListByQuery(sql);
 
 	}
 
@@ -76,18 +81,29 @@ public class ProductBL {
 		return 0;
 	}
 
-	public static Product getProductById(int productId) {
-		String sql = "SELECT * FROM Minishop.Product WHERE ProductId = " + productId;
-		getDataByQuery(sql);
+	public static int count(String searchInput) {
+		String sql = "SELECT COUNT(*) AS Total FROM MiniShop.Product WHERE Title LIKE '%" + searchInput + "%'";
+		int total = 0;
 		try (ResultSet rs = getDataByQuery(sql)) {
-			if (rs.next()) {
-				Product p = buildProduct(rs);
-				connection.close();
-				return p;
-			}
-		} catch (SQLException e) {
+			rs.next();
+			total = rs.getInt("Total");
+			connection.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return total;
 	}
+
+	public static Product getProductById(int productId) {
+		String sql = "SELECT * FROM Minishop.Product WHERE ProductId = " + productId;
+		return getListByQuery(sql).get(0);
+	}
+
+	public static List<Product> searchProduct(String searchInput, int start, int numOfProductPerPage) {
+		String sql = "SELECT * FROM MiniShop.Product WHERE Title LIKE '%" + searchInput + "%' LIMIT " + start + ","
+				+ numOfProductPerPage;
+		return getListByQuery(sql);
+
+	}
+
 }

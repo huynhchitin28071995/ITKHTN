@@ -12,30 +12,27 @@ import javax.servlet.http.HttpServletResponse;
 import businessLogics.ProductBL;
 import models.Product;
 
-@WebServlet({ "/ProductController", "/product.html", "/home.html", "/index.html" })
-public class ProductController extends HttpServlet {
+@WebServlet("/home/search.html")
+public class SearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ProductController() {
+	public SearchController() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int numOfProductsPerPage = 4;
-		List<Product> dsProduct;
-		if (request.getParameter("page") != null) {
-			dsProduct = ProductBL.getProducts(
-					PaginationHelper.computeStart(request.getParameter("page"), numOfProductsPerPage),
-					numOfProductsPerPage);
-		} else {
-			dsProduct = ProductBL.getProducts(1, numOfProductsPerPage);
-		}
-		int size = ProductBL.count();
+		int numOfProductPerPage = 4;
 
+		String searchInput = request.getParameter("q");
+		int size = ProductBL.count(searchInput);
+		String pageFromRequest = request.getParameter("page");
+		List<Product> dsProduct = ProductBL.searchProduct(searchInput,
+				PaginationHelper.computeStart(pageFromRequest, numOfProductPerPage), numOfProductPerPage);
 		request.setAttribute("dsProduct", dsProduct);
-		request.setAttribute("numOfPages", size / numOfProductsPerPage + 1);
-		request.getRequestDispatcher("/views/product/index.jsp").forward(request, response);
+		request.setAttribute("numOfPages", (size - 1) / numOfProductPerPage + 1);
+		request.setAttribute("searchInput", searchInput);
+		request.getRequestDispatcher("/views/product/search.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -19,7 +19,7 @@
 			<li><a href="${pageContext.request.contextPath}/helloworld.html">Hello World</a></li>
 			<li><a href="${pageContext.request.contextPath}/sumtwonumbers.html">Sum Two Numbers</a></li>
 			<li><a href="${pageContext.request.contextPath}/summultinumbers.html">Sum Multiple Numbers</a></li>
-			<li><a href="${pageContext.request.contextPath}/views/register.jsp">Register</a></li>
+			<li><a href="${pageContext.request.contextPath}/auth/register.html">Register</a></li>
 			<li><a href="${pageContext.request.contextPath}/views/login.jsp">Login</a></li>
 			<li><a href="${pageContext.request.contextPath}/views/multiplicationtable.jsp">Multiplication Table</a></li>
 			<li><a href="${pageContext.request.contextPath}/upload.html">Upload Image</a></li>
