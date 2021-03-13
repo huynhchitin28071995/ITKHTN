@@ -54,16 +54,11 @@ public class WaitController extends HttpServlet {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				try {
-					response.sendRedirect(request.getContextPath());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 			}
 		}, 3, TimeUnit.SECONDS);
 
 		System.out.println("Test out of schedule");
+		response.sendRedirect(request.getContextPath());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

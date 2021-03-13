@@ -76,4 +76,21 @@ public class MemberBL {
 		}
 		return false;
 	}
+
+	public static Member logOn(String userName, String password) {
+//		String sql = "SELECT * FROM MiniShop.Member WHERE UserName = '" + userName + "' AND Password = '"
+//				+ sha256(password) + "'";
+		String sql = "SELECT * FROM MiniShop.Member WHERE UserName = ? AND Password = ?";
+		try (Connection connection = CSDL.getKetNoi()) {
+			PreparedStatement pstm = connection.prepareStatement(sql);
+			pstm.setString(1, userName);
+			pstm.setBytes(2, sha256(password));
+			ResultSet rs = pstm.executeQuery();
+			if (rs.next()) {
+				return buildMember(rs);
+			}
+		} catch (Exception e) {
+		}
+		return null;
+	}
 }

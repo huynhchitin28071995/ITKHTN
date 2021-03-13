@@ -1,7 +1,5 @@
 package businessLogics;
 
-import models.Member;
-
 public class Test {
 	public static void main(String[] args) {
 //		Publisher p = new Publisher.Builder().build();
@@ -37,8 +35,9 @@ public class Test {
 //		ProductBL.getProducts(0, 5).forEach(p -> System.out.println(p.toString()));
 
 		// Test MemberBL
-		Member m = new Member.Builder().username("test").password("1").build();
-		MemberBL.addMember(m);
-		MemberBL.getMemberList().forEach(Member::println);
+//		Member m = new Member.Builder().username("test").password("1").build();
+//		MemberBL.addMember(m);
+//		MemberBL.getMemberList().forEach(Member::println);
+		MemberBL.logOn("tin1", "1234").println();
 	}
 }

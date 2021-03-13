@@ -26,7 +26,7 @@ src="${pageContext.request.contextPath}/upload/${product.imageURL}">
 <p>Price: <b>${product.price}</b></p>
 <form method="post" 
 action="${pageContext.request.contextPath}/cart.html">
-<input type="hidden" value="${product.productId}" name="id" >
+<input type="hidden" value="${product.productId}" name="productId" >
 <input type="number" name="qty" value="1">
 <button class="btn btn-primary">Add to Cart</button>
 </form>
