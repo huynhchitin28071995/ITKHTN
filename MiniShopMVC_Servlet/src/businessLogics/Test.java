@@ -1,6 +1,20 @@
 package businessLogics;
 
 public class Test {
+	static class MyClass {
+		public int x;
+
+		public MyClass(int x) {
+			this.x = x;
+		}
+	}
+
+	public static void swap(int a, int b) {
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+
 	public static void main(String[] args) {
 //		Publisher p = new Publisher.Builder().build();
 //		System.out.println(p.toString()); // can see that there is no way to alter p's fields
@@ -38,6 +52,14 @@ public class Test {
 //		Member m = new Member.Builder().username("test").password("1").build();
 //		MemberBL.addMember(m);
 //		MemberBL.getMemberList().forEach(Member::println);
-		MemberBL.logOn("tin1", "1234").println();
+//		MemberBL.logOn("tin1", "1234").println();
+
+		MyClass a = new MyClass(1);
+		MyClass b = new MyClass(2);
+		System.out.println(a.x + " " + b.x);
+		swap(a.x, b.x);
+		System.out.println(a.x + " " + b.x);
+		Test t = new Test();
+		t.swap(10, 20);
 	}
 }
