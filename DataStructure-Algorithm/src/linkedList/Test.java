@@ -13,6 +13,19 @@ public class Test {
 		while (list.getNextPointer() != null) {
 			System.out.println("Traversing: " + list.getPointer().getData());
 		}
+		
+//		System.out.println("print length " + listLength(list.getHead()));
+		System.out.println("print length " + list.getCountNode());
 	}
-
+	
+	private static int listLength(ListNode headNode) {
+		int length = 0;
+		ListNode currentNode = headNode;
+		while (currentNode.getNext() != null) {
+			System.out.println("asd");
+			length++;
+			currentNode = currentNode.getNext();
+		}
+		return length;
+	}
 }

@@ -2,7 +2,7 @@ package linkedList;
 
 public class List {
 	private ListNode head, tail, pointer; // if there is no pointer, headNode will be altered everytime we iterate the
-											// list.
+											// list. Just create a current node.
 	private int countNode = 0;
 
 	public List() {
@@ -21,7 +21,7 @@ public class List {
 			tail.setNext(null);
 			head.setNext(tail);
 		} else {
-			head.setNext(head.getNext());
+//			head.setNext(head.getNext());
 			listNode.setNext(head);
 			head = listNode;
 		}
