@@ -1,5 +1,5 @@
 package linkedList;
-
+//self-made list
 public class List {
 	private ListNode head, tail, pointer; // if there is no pointer, headNode will be altered everytime we iterate the
 											// list. Just create a current node.
