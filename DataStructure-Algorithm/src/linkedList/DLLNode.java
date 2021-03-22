@@ -1,9 +1,9 @@
 package linkedList;
 
-public class DLLNode {
+public class DLLNode implements Node{
 	private int data;
-	private DLLNode prev;
-	private DLLNode next;
+	private Node prev;
+	private Node next;
 
 	public DLLNode(int data) {
 		this.data = data;
@@ -23,19 +23,19 @@ public class DLLNode {
 		this.data = data;
 	}
 
-	public DLLNode getPrev() {
+	public Node getPrev() {
 		return prev;
 	}
 
-	public void setPrev(DLLNode prev) {
+	public void setPrev(Node prev) {
 		this.prev = prev;
 	}
 
-	public DLLNode getNext() {
+	public Node getNext() {
 		return next;
 	}
 
-	public void setNext(DLLNode next) {
+	public void setNext(Node next) {
 		this.next = next;
 	}
 

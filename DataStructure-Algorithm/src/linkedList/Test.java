@@ -28,4 +28,23 @@ public class Test {
 		}
 		return length;
 	}
+	
+	public static int CLLLength(Node tail) {
+		int length = 0;
+		Node currentNode = tail.getNext();
+		while (currentNode != tail) {
+			length++;
+			currentNode = currentNode.getNext();
+		}
+		return length;
+	}
+	
+	public static void printCLLData(Node tail) {
+		Node node = tail.getNext();
+		while(node!=tail) {
+			System.out.println(node.getData() + " -> ");
+			node = node.getNext();
+		}
+		System.out.println("(" + node.getData() + ")headNode");
+	}
 }

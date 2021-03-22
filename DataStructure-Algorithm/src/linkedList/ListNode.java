@@ -9,6 +9,10 @@ public class ListNode {
 		this.data = data;
 	}
 
+	public ListNode() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getData() {
 		return data;
 	}

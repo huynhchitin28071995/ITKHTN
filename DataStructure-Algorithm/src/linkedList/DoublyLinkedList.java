@@ -23,7 +23,7 @@ public class DoublyLinkedList {
 			if (temp.getData() == data)
 				return pos;
 			pos++;
-			temp = temp.getNext();
+			temp = (DLLNode) temp.getNext();
 		}
 		return Integer.MIN_VALUE;
 	}
@@ -34,7 +34,7 @@ public class DoublyLinkedList {
 
 	// new value to the front of the list
 	public void insert(int newValue) {
-		DLLNode newNode = new DLLNode(newValue, null, head.getNext());
+		DLLNode newNode = new DLLNode(newValue, null, (DLLNode) head.getNext());
 		newNode.getNext().setPrev(newNode);
 		head = newNode;
 		length++;
@@ -54,9 +54,9 @@ public class DoublyLinkedList {
 		} else {
 			DLLNode temp = new DLLNode(data);
 			for (int i = 0; i < position; i++) {
-				temp = temp.getNext();
+				temp = (DLLNode) temp.getNext();
 			}
-			DLLNode newNode = new DLLNode(data, temp, temp.getNext());
+			DLLNode newNode = new DLLNode(data, temp, (DLLNode) temp.getNext());
 			newNode.getNext().setPrev(newNode);
 			temp.setNext(newNode);
 		}
@@ -64,6 +64,77 @@ public class DoublyLinkedList {
 	}
 
 	public void insertTail(int newValue) {
-		DLLNode newNode = new DLLNode(newValue, tail.getPrev(), tail);
+		DLLNode newNode = new DLLNode(newValue, (DLLNode) tail.getPrev(), tail);
+		newNode.getPrev().setNext(newNode);
+		tail.setPrev(newNode);
+		length++;
+	}
+	
+	public void remove(int position) {
+		if(position < 0) position = 0;
+		if(position >= length) position = length - 1;
+		if(head == null) return;
+		if(position == 0) {
+			head = (DLLNode) head.getNext();
+			if(head == null) tail = null;
+		} else {
+			DLLNode temp = head;
+			for(int i = 1; i < position; i++) {
+				temp = (DLLNode) temp.getNext();
+			}
+			temp.getNext().setPrev(temp.getPrev());
+			temp.getPrev().setNext(temp.getNext());
+		}
+		length--;
+	}
+	
+	public synchronized void removeMatched(DLLNode node) {
+		if(head == null) return;
+		
+		if(node.equals(head)) {
+			remove(0);
+		}
+		DLLNode temp = head;
+		while(temp!=null) {
+			temp = (DLLNode) temp.getNext();
+			if(node.equals(temp)) {
+				temp.getNext().setPrev(temp.getPrev());
+				temp.getPrev().setNext(temp.getNext());
+				return;
+			}
+		}
+	}
+	
+	public int removeHead() {
+		int save = head.getData();
+		if(length==0) return Integer.MIN_VALUE;
+		remove(0);
+		return save;
+	}
+	
+	public int removeTail() {
+		DLLNode save = tail;
+		if(length == 0) return Integer.MIN_VALUE;
+		tail.setPrev(save.getPrev());
+		save.getPrev().setNext(tail);
+		length--;
+		return save.getData();
+	}
+	
+	public String toString() {
+		String result = "[]";
+		if(length == 0) return result;
+		result = "[" + head.getNext().getData();
+		DLLNode temp = (DLLNode) head.getNext().getNext();
+		while (temp != null) {
+			result += ", " + temp.getData();
+			temp = (DLLNode) temp.getNext();
+		}
+		return result + "]";
+	}
+	
+	public void clearList() {
+		head = tail = null;
+		length = 0;
 	}
 }
