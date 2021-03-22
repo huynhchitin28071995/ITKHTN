@@ -3,7 +3,9 @@ package linkedList;
 public class ListNode {
 	private int data;
 	private ListNode next;
-
+	public int[] elements;
+	public int numElements;
+	private ListNode previous;
 	public ListNode(int data) {
 		super();
 		this.data = data;
@@ -32,5 +34,16 @@ public class ListNode {
 	@Override
 	public String toString() {
 		return "list node: data = " + this.data;
+	}
+
+	public void setPrevious(ListNode previous) {
+		this.previous = previous;
+	}
+	public ListNode getPrevious() {
+		return this.previous;
+	}
+	
+	public int getElement(int index) {
+		return this.elements[index];
 	}
 }
