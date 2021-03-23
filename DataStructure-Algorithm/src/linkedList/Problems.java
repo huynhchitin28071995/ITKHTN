@@ -132,6 +132,22 @@ public class Problems {
 		return problem7a(node.getNext(), listSize);
 	}
 
+	private static boolean problem8(LinkedList list) {
+		ListNode curNode = list.getHead();
+		Hashtable<Integer, ListNode> ht = new Hashtable<>();
+		int counter = 0;
+		while (curNode != null) {
+			if (ht.containsValue(curNode))
+				return true;
+			else {
+				ht.put(counter, curNode);
+			}
+			counter++;
+			curNode = curNode.getNext();
+		}
+		return false;
+	}
+
 	private static int count(ListNode curNode) {
 		int count = 0;
 //		ListNode temp = curNode.getNext();
@@ -192,8 +208,11 @@ public class Problems {
 //		problem6(ll.getHead(), 11);
 //		problem6(ll.getHead(), 13);
 
-		System.out.println("IsCyclic = " + problem7a(ll.getHead(), ll.length()));
-		temp.setNext(ll.getHead().getNext().getNext());
-		System.out.println("IsCyclic = " + problem7a(ll.getHead(), ll.length()));
+//		System.out.println("IsCyclic = " + problem7a(ll.getHead(), ll.length()));
+//		temp.setNext(ll.getHead().getNext().getNext());
+//		System.out.println("IsCyclic = " + problem7a(ll.getHead(), ll.length()));
+		System.out.println("IsCyclic = " + problem8(ll));
+		temp.setNext(ll.getHead().getNext().getNext().getNext());
+		System.out.println("IsCyclic = " + problem8(ll));
 	}
 }
