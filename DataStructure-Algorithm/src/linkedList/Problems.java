@@ -176,7 +176,7 @@ public class Problems {
 		return problem11(head.getNext(), listSize);
 	}
 
-	private static void problem12(LinkedList list) {
+	private static void problem12(LinkedList list) { // find the start of the loop.
 		ListNode slowPtr = list.getHead();
 		ListNode fastPtr = list.getHead();
 		boolean isLoop = false;
@@ -190,10 +190,10 @@ public class Problems {
 			}
 		}
 		if (isLoop) {
-			slowPtr = list.getHead();
+			slowPtr = list.getHead(); // move slowPtr to head
 			while (slowPtr != fastPtr) {
-				slowPtr = slowPtr.getNext();
-				fastPtr = fastPtr.getNext();
+				slowPtr = slowPtr.getNext();// slowPtr and fastPtr move 1 step. they will meet again at the start of the
+				fastPtr = fastPtr.getNext();// loop.
 			}
 			System.out.println("Start of the loop is at value: " + slowPtr.getData());
 		} else {
@@ -204,6 +204,68 @@ public class Problems {
 	private static void problem15(LinkedList list) {
 		ListNode slowPtr = list.getHead();
 		ListNode fastPtr = list.getHead();
+		boolean isCyclic = false;
+		while (fastPtr != null && fastPtr.getNext() != null) {
+			slowPtr = slowPtr.getNext();
+			fastPtr = fastPtr.getNext().getNext();
+			if (slowPtr.equals(fastPtr)) {
+				System.out.println("This list is cyclic!");
+				isCyclic = true;
+				break;
+			}
+		}
+		int counter = 0;
+		if (isCyclic) { // count the number of steps for slowPtr to reach the meeting point again (1
+						// step at a time)
+			do {
+				counter++;
+				slowPtr = slowPtr.getNext();
+			} while (slowPtr != fastPtr);
+			System.out.println("Loop length = " + counter);
+		} else {
+			System.out.println("This list is non-cyclic");
+		}
+	}
+
+	private static void problem16(ListNode head, ListNode newNode) { // Add new node in descending linked list
+		ListNode cur = head;
+		if (head == null)
+			return;
+		ListNode temp = cur;
+		while (cur != null && newNode.getData() < cur.getData()) {
+			temp = cur;
+			cur = cur.getNext();
+		}
+		newNode.setNext(cur);
+		temp.setNext(newNode);
+	}
+
+	private static ListNode problem17(LinkedList list) { // reverse a singly linked list
+		ListNode cur = list.getHead();
+		ListNode next;
+		ListNode prev = null;
+		while (cur != null) {
+			next = cur.getNext();
+			cur.setNext(prev);
+			prev = cur;
+			cur = next;
+		}
+		list.setHead(prev);// package-private method. no need to return prev
+		return prev;// prev is at tail, also new head. return new head, and store it in main
+	}
+
+	private static void problem17a(ListNode cur, LinkedList list) {
+		if (cur == null)
+			return;
+		ListNode next = cur.getNext();// next is after cur
+		if (next == null) {// cur is at tail and next is null
+			list.setHead(cur);// cur is at tail and is new head
+			return;
+		}
+		// if cur is not at tail
+		problem17a(next, list);// next is the new cur
+		next.setNext(cur);// set next's next pointer to cur/before
+		cur.setNext(null);
 
 	}
 
@@ -219,7 +281,7 @@ public class Problems {
 
 	public static void main(String[] args) {
 		LinkedList ll = new LinkedList();
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i += 1) {
 			ll.insertAtBegin(new ListNode(i));
 		}
 		ListNode node = ll.getHead();
@@ -228,7 +290,7 @@ public class Problems {
 			System.out.println(node.getData());
 			node = node.getNext();
 			if (node != null) {
-				temp = node;
+				temp = node; // to get the before-last node for making loop
 			}
 		}
 //		for (int i = 0; i < 10; i++) {
@@ -280,9 +342,19 @@ public class Problems {
 //		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
 //		temp.setNext(ll.getHead().getNext().getNext());
 //		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
-		problem12(ll);
-		temp.setNext(ll.getHead());
-		problem12(ll);
-
+//		problem12(ll);
+//		temp.setNext(ll.getHead());
+//		problem12(ll);
+//		problem15(ll);
+//		temp.setNext(ll.getHead().getNext().getNext());
+//		problem15(ll);
+//		problem16(ll.getHead(), new ListNode(5));
+//		problem17(ll);
+		problem17a(ll.getHead(), ll);
+		node = ll.getHead();
+		while (node != null) {
+			System.out.println(node.getData());
+			node = node.getNext();
+		}
 	}
 }

@@ -5,6 +5,10 @@ public class LinkedList {
 	private int length;
 	private ListNode head;
 
+	void setHead(ListNode head) {
+		this.head = head;
+	}
+
 	public LinkedList() {
 		length = 0;
 	}
