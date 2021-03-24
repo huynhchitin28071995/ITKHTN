@@ -149,7 +149,8 @@ public class Problems {
 	}
 
 	private static void problem10(LinkedList list) {
-		ListNode slowPtr = list.getHead(), fastPtr = list.getHead().getNext();
+		ListNode slowPtr = list.getHead();
+		ListNode fastPtr = list.getHead().getNext();
 		while (fastPtr != null && fastPtr.getNext() != null) {
 			if (slowPtr.equals(fastPtr)) {
 				System.out.println("This list is cyclic!");
@@ -173,6 +174,37 @@ public class Problems {
 			count++;
 		}
 		return problem11(head.getNext(), listSize);
+	}
+
+	private static void problem12(LinkedList list) {
+		ListNode slowPtr = list.getHead();
+		ListNode fastPtr = list.getHead();
+		boolean isLoop = false;
+		while (fastPtr != null && fastPtr.getNext() != null) {
+			slowPtr = slowPtr.getNext();
+			fastPtr = fastPtr.getNext().getNext();
+			if (slowPtr.equals(fastPtr)) {
+				System.out.println("This list is cyclic!");
+				isLoop = true;
+				break;
+			}
+		}
+		if (isLoop) {
+			slowPtr = list.getHead();
+			while (slowPtr != fastPtr) {
+				slowPtr = slowPtr.getNext();
+				fastPtr = fastPtr.getNext();
+			}
+			System.out.println("Start of the loop is at value: " + slowPtr.getData());
+		} else {
+			System.out.println("This list is non-cyclic!");
+		}
+	}
+
+	private static void problem15(LinkedList list) {
+		ListNode slowPtr = list.getHead();
+		ListNode fastPtr = list.getHead();
+
 	}
 
 	private static int count(ListNode curNode) {
@@ -245,8 +277,12 @@ public class Problems {
 //		temp.setNext(ll.getHead().getNext().getNext().getNext());
 //		problem10(ll);
 
-		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
-		temp.setNext(ll.getHead().getNext().getNext());
-		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
+//		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
+//		temp.setNext(ll.getHead().getNext().getNext());
+//		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
+		problem12(ll);
+		temp.setNext(ll.getHead());
+		problem12(ll);
+
 	}
 }
