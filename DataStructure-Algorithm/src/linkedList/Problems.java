@@ -148,6 +148,33 @@ public class Problems {
 		return false;
 	}
 
+	private static void problem10(LinkedList list) {
+		ListNode slowPtr = list.getHead(), fastPtr = list.getHead().getNext();
+		while (fastPtr != null && fastPtr.getNext() != null) {
+			if (slowPtr.equals(fastPtr)) {
+				System.out.println("This list is cyclic!");
+				return;
+			}
+			slowPtr = slowPtr.getNext();
+			fastPtr = fastPtr.getNext().getNext();
+		}
+		System.out.println("This list is non-cyclic");
+	}
+
+	private static boolean problem11(ListNode head, int listSize) {
+		if (head == null)
+			return false;
+		ListNode node = head.getNext();
+		count = 0;
+		while (node != null && count <= listSize) {
+			if (node.equals(head))
+				return true;
+			node = node.getNext();
+			count++;
+		}
+		return problem11(head.getNext(), listSize);
+	}
+
 	private static int count(ListNode curNode) {
 		int count = 0;
 //		ListNode temp = curNode.getNext();
@@ -211,8 +238,15 @@ public class Problems {
 //		System.out.println("IsCyclic = " + problem7a(ll.getHead(), ll.length()));
 //		temp.setNext(ll.getHead().getNext().getNext());
 //		System.out.println("IsCyclic = " + problem7a(ll.getHead(), ll.length()));
-		System.out.println("IsCyclic = " + problem8(ll));
-		temp.setNext(ll.getHead().getNext().getNext().getNext());
-		System.out.println("IsCyclic = " + problem8(ll));
+//		System.out.println("IsCyclic = " + problem8(ll));
+//		temp.setNext(ll.getHead().getNext().getNext().getNext());
+//		System.out.println("IsCyclic = " + problem8(ll));
+//		problem10(ll);
+//		temp.setNext(ll.getHead().getNext().getNext().getNext());
+//		problem10(ll);
+
+		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
+		temp.setNext(ll.getHead().getNext().getNext());
+		System.out.println("IsCyclic = " + problem11(ll.getHead(), ll.length()));
 	}
 }
