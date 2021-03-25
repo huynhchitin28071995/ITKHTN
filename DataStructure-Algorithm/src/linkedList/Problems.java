@@ -269,6 +269,62 @@ public class Problems {
 
 	}
 
+	private static void problem18(ListNode head1, ListNode head2) { // find the merge point
+		ListNode cur1 = head1;
+		while (cur1 != null) {
+			ListNode cur2 = head2;
+//			System.out.println("check cur1");
+			while (cur2 != null) {
+//				System.out.println("check cur2");
+				if (cur2.equals(cur1)) {
+					System.out.println("The two lists intersect at node data: " + cur2.getData());
+					return;
+				}
+				cur2 = cur2.getNext();
+			}
+			cur1 = cur1.getNext();
+		}
+		System.out.println("The two lists do not intersect!");
+	}
+
+	private static void problem20(LinkedList list1, LinkedList list2) { // find the merge point with hashtable
+		ListNode cur1 = list1.getHead();
+		Hashtable<Integer, ListNode> ht = new Hashtable<Integer, ListNode>();
+		int counter = 0;
+		while (cur1 != null) {
+			ht.put(counter++, cur1);
+			cur1 = cur1.getNext();
+		}
+		ListNode cur2 = list2.getHead();
+		while (cur2 != null) {
+			if (ht.contains(cur2)) {
+				System.out.println("The two lists intersect at node data: " + cur2.getData());
+				return;
+			}
+			cur2 = cur2.getNext();
+		}
+		System.out.println("The two lists do not intersect!");
+	}
+
+	private static ListNode problem49(ListNode head, int k) { // Find n/k-th value of the list. this solution has been
+																// altered. check the book again.
+		ListNode fractionNode = null;
+		int i = 0;
+		if (k <= 0)
+			return null;
+		for (; head != null; head = head.getNext()) {
+			if (i % k == 0) {
+				if (fractionNode == null) {
+					fractionNode = head;
+				} else {
+					fractionNode = fractionNode.getNext();
+				}
+			}
+			i++;
+		}
+		return fractionNode;
+	}
+
 	private static int count(ListNode curNode) {
 		int count = 0;
 //		ListNode temp = curNode.getNext();
@@ -290,7 +346,7 @@ public class Problems {
 			System.out.println(node.getData());
 			node = node.getNext();
 			if (node != null) {
-				temp = node; // to get the before-last node for making loop
+				temp = node; // to get the last node for making loop
 			}
 		}
 //		for (int i = 0; i < 10; i++) {
@@ -350,11 +406,22 @@ public class Problems {
 //		problem15(ll);
 //		problem16(ll.getHead(), new ListNode(5));
 //		problem17(ll);
-		problem17a(ll.getHead(), ll);
-		node = ll.getHead();
-		while (node != null) {
-			System.out.println(node.getData());
-			node = node.getNext();
+//		problem17a(ll.getHead(), ll);
+//		node = ll.getHead();
+//
+//		while (node != null) {
+//			System.out.println(node.getData());
+//			node = node.getNext();
+//		}
+		LinkedList ll2 = new LinkedList();
+		for (int i = 10; i < 20; i += 1) {
+			ll2.insertAtBegin(new ListNode(i));
 		}
+		problem18(ll.getHead(), ll2.getHead());
+		problem20(ll, ll2);
+		temp.setNext(ll2.getHead().getNext()); // merge two lists
+		problem18(ll.getHead(), ll2.getHead());
+		problem18(ll2.getHead(), ll.getHead());
+		problem20(ll, ll2);
 	}
 }
