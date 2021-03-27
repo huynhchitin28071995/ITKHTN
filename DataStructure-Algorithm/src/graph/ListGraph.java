@@ -10,11 +10,11 @@ public class ListGraph implements Graph {
 	private LinkedList[] edges;
 	private int vertexCount = 0;
 
-	public ListGraph(int vertextCount) {
-		this.vertexCount = vertextCount;
+	public ListGraph(int vertexCount) {
+		this.vertexCount = vertexCount;
 		vertices = new ArrayList<>();
-		edges = new LinkedList[vertexCount];
-		for (int i = 0; i < vertexCount; i++) {
+		edges = new LinkedList[this.vertexCount];
+		for (int i = 0; i < this.vertexCount; i++) {
 			vertices.add(i);
 			edges[i] = new LinkedList();
 		}
@@ -25,7 +25,7 @@ public class ListGraph implements Graph {
 		int j = vertices.indexOf(destination);
 		if (i != -1 || j != -1) {
 			edges[i].insertAtBegin(new ListNode(destination));
-			edges[i].insertAtBegin(new ListNode(source));
+			edges[j].insertAtBegin(new ListNode(source));
 		}
 	}
 }
