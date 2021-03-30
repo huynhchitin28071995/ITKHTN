@@ -1,6 +1,8 @@
 package stack;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class Problems {
@@ -41,51 +43,46 @@ public class Problems {
 		}
 	}
 
-	public static String problem2(String s) { // infix to postfix conversion
-		Stack<Character> stk = new Stack<Character>();
-		String result = "";
-		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) == ' ') {
+	public static Object[] problem2(String s) { // infix to postfix conversion
+		Stack<String> stk = new Stack<>();
+//		String[] strings = s.split("(?<=\\d)(?=\\D)|(?<=\\D)(?=\\d)");
+		String[] strings = s.split("(?<=[-+*/()])|(?=[-+*/()])");
+		List<String> list = new ArrayList<>();
+		for (int i = 0; i < strings.length; i++) {
+			strings[i] = strings[i].trim();
+			// use equals() to compare, not comparison operator
+			if (strings[i].equals("") || strings[i].equals(" "))
 				continue;
-			}
-			if (s.charAt(i) != '+' && s.charAt(i) != '-' && s.charAt(i) != '*' && s.charAt(i) != '/'
-					&& s.charAt(i) != '(' && s.charAt(i) != ')')
-//				System.out.print(s.charAt(i));
-				result += s.charAt(i);
-			else if (s.charAt(i) == ')') {
-				while (stk.peek() != '(') {
-//					System.out.print(stk.pop());
-					result += stk.pop();
-				}
+			if (!strings[i].equals("+") && !strings[i].equals("-") && !strings[i].equals("*") && !strings[i].equals("/")
+					&& !strings[i].equals("(") && !strings[i].equals(")"))
+				list.add(strings[i]);
+			else if (strings[i].equals(")")) {
+				while (!stk.peek().equals("("))
+					list.add(stk.pop());
 				stk.pop();
 			} else {
-				if (s.charAt(i) == '*' || s.charAt(i) == '/') {
-					while (!stk.isEmpty() && stk.peek() != '(' && stk.peek() != '+' && stk.peek() != '-') {
-//						System.out.print(stk.pop());
-						result += stk.pop();
-					}
-				} else if (s.charAt(i) == '+' || s.charAt(i) == '-') {
-					while (!stk.isEmpty() && stk.peek() != '(') {
-//						System.out.print(stk.pop());
-						result += stk.pop();
-					}
+				if (strings[i].equals("*") || strings[i].equals("/")) {
+					while (!stk.isEmpty() && !stk.peek().equals("(") && !stk.peek().equals("+")
+							&& !stk.peek().equals("-"))
+						list.add(stk.pop());
+				} else if (strings[i].equals("+") || strings[i].equals("-")) {
+					while (!stk.isEmpty() && !stk.peek().equals("("))
+						list.add(stk.pop());
 				}
-				stk.push(s.charAt(i));
+				stk.push(strings[i]);
 			}
 		}
 
-		while (!stk.isEmpty()) {
-			result += stk.pop();
-//			System.out.print(stk.pop());
-		}
-		return result;
+		while (!stk.isEmpty())
+			list.add(stk.pop());
+		return list.toArray();
 	}
 
 //will back to problem 3 later
 
-	public static void problem4(String[] s) {// evaluate postfix expression
+	public static void problem4(Object[] objects) {// evaluate postfix expression
 		Stack<Integer> stk = new Stack<Integer>();
-		for (String string : s) {
+		for (Object string : objects) {
 			if (string.equals("+"))
 				stk.push(stk.pop() + stk.pop());
 			else if (string.equals("-")) {
@@ -100,20 +97,55 @@ public class Problems {
 				int op1 = stk.pop();
 				int op2 = stk.pop();
 				stk.push(op2 / op1);
+			} else if (string.equals(" ")) {
+				continue;
 			} else
-				stk.push(Integer.parseInt(string));
+				stk.push(Integer.parseInt((String) string));
 		}
 		System.out.println(stk.pop());
+	}
+
+	public static void problem5(Object[] o) { // evaluate infix expression with 2 stacks in 1 pass
+		Stack<String> stkOprt = new Stack<>();
+		Stack<Integer> stkOprd = new Stack<>();
+		for (int i = 0; i < o.length; i++) {
+			if (o[i].equals("+") || o[i].equals("-") || o[i].equals("*") || o[i].equals("/")) {
+				if (stkOprt.isEmpty())
+					stkOprt.push(((String) o[i]).trim());
+			} else {
+				stkOprd.push(Integer.parseInt(((String) o[i]).trim()));
+			}
+		}
+		while (!stkOprt.isEmpty()) {
+			stkOprd.push(evaluate(stkOprt.pop(), stkOprd.pop(), stkOprd.pop()));
+		}
+		System.out.println(stkOprd.pop());
+	}
+
+	private static int evaluate(String oprt, int val2, int val1) {
+		if (oprt.equals("+")) {
+			return val1 + val2;
+		} else if (oprt.equals("*"))
+			return val1 * val2;
+		else if (oprt.equals("-")) {
+			return (val1 - val2);
+		} else if (oprt.equals("/")) {
+			return (val1 / val2);
+		}
+		return Integer.MIN_VALUE;
 	}
 
 	public static void main(String[] args) {
 		String s = "(asdf)(dfsgdfa)(xcz)dsa[gfgf[]]{}[]";
 //		problem1(s);
-		s = "A*B-(C+D)+E";
-//		problem2(s);
-		s = "10 * 2 - 3 + 4";
-		System.out.println(10 * 2 - 3 + 4);
-		System.out.println(Arrays.toString(problem2(s).split("")));
-		problem4(problem2(s).split(""));
+		s = "A * B-(C+D)+E";
+		System.out.println(Arrays.toString(problem2(s)));
+		s = "100 * (2 - 3) / 4+5";
+		System.out.println(100 * (2 - 3) / 4 + 5);
+		System.out.println(Arrays.toString(problem2(s)));
+		problem4(problem2(s));
+		s = "100* 3 + 5";
+		System.out.println(100 * 3 + 5 / 2 - 7 * 4 - 1);
+		problem5(s.split("(?<=[-+*/()])|(?=[-+*/()])"));
 	}
 }
