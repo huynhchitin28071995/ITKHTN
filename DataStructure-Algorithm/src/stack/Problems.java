@@ -105,21 +105,61 @@ public class Problems {
 		System.out.println(stk.pop());
 	}
 
-	public static void problem5(Object[] o) { // evaluate infix expression with 2 stacks in 1 pass
+	public static void problem5(String s) { // evaluate infix expression with 2 stacks in 1 pass
+		String[] o = s.split("(?<=[-+*/()])|(?=[-+*/()])");
 		Stack<String> stkOprt = new Stack<>();
 		Stack<Integer> stkOprd = new Stack<>();
 		for (int i = 0; i < o.length; i++) {
-			if (o[i].equals("+") || o[i].equals("-") || o[i].equals("*") || o[i].equals("/")) {
-				if (stkOprt.isEmpty())
-					stkOprt.push(((String) o[i]).trim());
+			o[i] = ((String)o[i]).trim();
+//			if(o[i].equals("")) continue;
+			if(o[i].equals("(")) 
+				stkOprt.push((String) o[i]);
+			else if(o[i].equals(")")) {
+				while(stkOprt.peek()!="(") {
+					stkOprd.push(evaluate(stkOprt.pop(), stkOprd.pop(), stkOprd.pop()));
+				}
+				stkOprt.pop();
+			} else if (isOperator((String) o[i])) {
+				while (!stkOprt.isEmpty()&&precedence((String) o[i])<=precedence(stkOprt.peek())) {
+					stkOprd.push(evaluate(stkOprt.pop(), stkOprd.pop(), stkOprd.pop()));
+				}
+				stkOprt.push((String) o[i]);
 			} else {
-				stkOprd.push(Integer.parseInt(((String) o[i]).trim()));
+				
+				stkOprd.push(Integer.parseInt((String)o[i]));
 			}
-		}
+		
+	}
 		while (!stkOprt.isEmpty()) {
 			stkOprd.push(evaluate(stkOprt.pop(), stkOprd.pop(), stkOprd.pop()));
 		}
 		System.out.println(stkOprd.pop());
+	}
+	private static boolean isOperator(String s) {
+		switch (s) {
+		case "+":
+		case "-":
+		case "*":
+		case "/":
+			return true;
+
+		default:
+			return false;
+		}
+	}
+	private static int precedence(String s) {
+		switch (s) {
+		case "+":
+		case "-":
+			return 1;
+		case "*":
+		case "/":
+			return 2;
+		case "^":
+			return 3;
+		default:
+			return -1;
+		}
 	}
 
 	private static int evaluate(String oprt, int val2, int val1) {
@@ -144,8 +184,8 @@ public class Problems {
 		System.out.println(100 * (2 - 3) / 4 + 5);
 		System.out.println(Arrays.toString(problem2(s)));
 		problem4(problem2(s));
-		s = "100* 3 + 5";
-		System.out.println(100 * 3 + 5 / 2 - 7 * 4 - 1);
-		problem5(s.split("(?<=[-+*/()])|(?=[-+*/()])"));
+		s = "100 * (3 + 5) / 2 - 7 * 4 - 1";
+		System.out.println(100 *( 3 + 5) / 2 - 7 * 4 - 1);
+		problem5(s);
 	}
 }
