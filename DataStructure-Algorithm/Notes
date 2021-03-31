@@ -1,2 +1,5 @@
 - finished up to problem 20 of Linked List chapter. Come back to these later.
-- continue problem 5 of Stack. https://algorithms.tutorialhorizon.com/evaluation-of-infix-expressions/
+- finished problem 5 of Stack. https://algorithms.tutorialhorizon.com/evaluation-of-infix-expressions/
+- problem 18/ stack: out put the popped element
+- problem 20/ stack: use 2 stacks, each stack pushes a list, them popped at the same rate, at which point two stacks peeks are different,
+that is the merging point.

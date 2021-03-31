@@ -106,14 +106,15 @@ public class Problems {
 	}
 
 	public static void problem5(String s) { // evaluate infix expression with 2 stacks in 1 pass
-		String[] o = s.split("(?<=[-+*/()])|(?=[-+*/()])");
+		String[] o = s.split("(?<=[-+*/()])|(?=[-+*/()])");//this regexp does not deal with white space
 		Stack<String> stkOprt = new Stack<>();
 		Stack<Integer> stkOprd = new Stack<>();
 		for (int i = 0; i < o.length; i++) {
+			if(o[i].equals(" ")) continue;
 			o[i] = ((String)o[i]).trim();
-//			if(o[i].equals("")) continue;
+			
 			if(o[i].equals("(")) 
-				stkOprt.push((String) o[i]);
+				stkOprt.push("(");
 			else if(o[i].equals(")")) {
 				while(stkOprt.peek()!="(") {
 					stkOprd.push(evaluate(stkOprt.pop(), stkOprd.pop(), stkOprd.pop()));
@@ -175,7 +176,65 @@ public class Problems {
 		return Integer.MIN_VALUE;
 	}
 
-	public static void main(String[] args) {
+	public static void problem6() throws Exception{ //design a stack to getMinimun O(1)
+		MinStack ms = new MinStack();
+		ms.push(7);
+		ms.push(4);
+		ms.push(9);
+		System.out.println(ms.getMin());
+		ms.pop();
+		System.out.println(ms.getMin());
+		ms.pop();
+		System.out.println(ms.getMin());
+		
+	}
+	public static void problem8(String s) { //check is palindrome with i and j
+		int i = 0;
+		int j = s.length() - 1;
+		while(s.charAt(i)==s.charAt(j)&&s.charAt(i)!='X'&&s.charAt(j)!='X') {
+			i++;
+			j--;
+		}
+		if(s.charAt(i+1)!=s.charAt(j-1)) {
+			System.out.println("Not palindrome!");
+		} else {
+			System.out.println("Is palindrome!");
+		}
+	}
+	public static void problem9_10(String s) { //check is palindrome with stack and in case string is a list
+		Stack<Character> stk = new Stack<Character>();
+		int i = 0;
+		while(s.charAt(i) != 'X') {
+			stk.push(s.charAt(i++));
+		}
+		i++;
+		for (; i < s.length(); i++) {
+			if(s.charAt(i) == stk.peek())
+				stk.pop();
+			else if(s.charAt(i)!=stk.peek()||stk.isEmpty()){
+				System.out.println("Not palindrome");
+				return;
+			}
+		}
+		if(stk.isEmpty()) System.out.println("Is palindrome"); else System.out.println("Not palindrome"); 
+	}
+	public static void problem11(Stack<Integer> s) { //reverse a stack
+		if(s.isEmpty()) return;
+		int val = s.pop();
+		problem11(s);
+		insertAtBottom(s, val);
+	}
+	private static void insertAtBottom(Stack<Integer> s, int data) {
+		if(s.isEmpty()) {
+			s.push(data);
+			return;
+		}
+		int temp = s.pop();
+		insertAtBottom(s, data);
+		s.push(temp);
+	}
+	private static Stack<Integer> stk = new Stack<Integer>();
+	public static void main(String[] args) throws Exception {
 		String s = "(asdf)(dfsgdfa)(xcz)dsa[gfgf[]]{}[]";
 //		problem1(s);
 		s = "A * B-(C+D)+E";
@@ -184,8 +243,19 @@ public class Problems {
 		System.out.println(100 * (2 - 3) / 4 + 5);
 		System.out.println(Arrays.toString(problem2(s)));
 		problem4(problem2(s));
-		s = "100 * (3 + 5) / 2 - 7 * 4 - 1";
+		s = "100 * ( 3+ 5)/2-7*4-1";
 		System.out.println(100 *( 3 + 5) / 2 - 7 * 4 - 1);
+		System.out.println(Arrays.toString(s.split("(?<=[-+*/()])|(?=[-+*/()])")));
 		problem5(s);
+		problem6();
+		problem9_10("abababaXbababaaaaa");
+		problem8("abababaXabababa");
+		
+		for(int i =0; i< 10; i++)
+			stk.push(i);
+		problem11(stk);
+		while(!stk.isEmpty()) {
+			System.out.println(stk.pop());
+		}
 	}
 }
