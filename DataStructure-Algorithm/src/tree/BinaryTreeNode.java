@@ -1,7 +1,9 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTreeNode {
@@ -120,5 +122,69 @@ public class BinaryTreeNode {
 			}
 		}
 		return a;
+	}
+
+	public void postOrder(BinaryTreeNode root) {
+		if (root != null) {
+			postOrder(root.left);
+			postOrder(root.right);
+			System.out.println(root.data);
+		}
+	}
+
+	public List<Integer> postOrderTraversal(BinaryTreeNode root) {
+		List<Integer> l = new LinkedList<Integer>();
+		if (root == null)
+			return l;
+		BinaryTreeNode cur;
+		Stack<BinaryTreeNode> s = new Stack<>();
+		s.push(root);
+		BinaryTreeNode prev = null;
+		while (!s.isEmpty()) {
+			cur = s.peek();
+			if (prev == null || prev.left == cur || prev.right == cur) {
+				if (cur.left != null)
+					s.push(cur.left);
+				else if (cur.right != null)
+					s.push(cur.right);
+			} else if (cur.left == prev) {
+				if (cur.right != null)
+					s.push(cur.right);
+			} else {
+				l.add(cur.data);
+				s.pop();
+			}
+			prev = cur;
+		}
+		return l;
+	}
+
+	public List<List<Integer>> levelOrder(BinaryTreeNode root) {
+		List<List<Integer>> res = new ArrayList<>();
+		if (root == null)
+			return res;
+		// Initialization
+		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+		q.offer(root);
+		q.offer(null);
+		List<Integer> curr = new ArrayList<Integer>();
+		while (!q.isEmpty()) {
+			BinaryTreeNode tmp = q.poll();
+			if (tmp != null) {
+				curr.add(tmp.data);
+				if (tmp.left != null)
+					q.offer(tmp.left);
+				if (tmp.right != null)
+					q.offer(tmp.right);
+			} else {
+				List<Integer> c_curr = new ArrayList<Integer>(curr);
+				res.add(c_curr);
+				curr.clear(); // Java will clear the reference, so have to new an ArrayList.
+				// completion of a level when q.poll=null
+				if (!q.isEmpty())
+					q.offer(null);// to mark a new level(n+1)
+			}
+		}
+		return res;
 	}
 }

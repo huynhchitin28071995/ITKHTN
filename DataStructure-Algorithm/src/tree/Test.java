@@ -10,11 +10,12 @@ public class Test {
 		b.getLeft().setRight(new BinaryTreeNode(5));
 		b.getRight().setLeft(new BinaryTreeNode(6));
 		b.getRight().setRight(new BinaryTreeNode(7));
-		b.getRight().getLeft().setLeft(new BinaryTreeNode(8));
+//		b.getRight().getLeft().setLeft(new BinaryTreeNode(8));
 		b.preOrder(b);
 		System.out.println(b.preOrderTraversal(b));
 		b.inOrder(b);
 		System.out.println(b.inOrderTraversal(b));
 		System.out.println(b.inOrderTraversal_1(b));
+		b.postOrder(b);
 	}
 }
