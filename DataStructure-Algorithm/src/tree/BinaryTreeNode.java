@@ -7,7 +7,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTreeNode {
-	public int data;
+	private int data;
 	public BinaryTreeNode left, right;
 
 	public BinaryTreeNode(int data) {
