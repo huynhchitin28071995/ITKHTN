@@ -4,3 +4,5 @@
 - problem 20/ stack: use 2 stacks, each stack pushes a list, them popped at the same rate, at which point two stacks peeks are different,
 that is the merging point.
 - queue: 9/10 problems.
+- scanned through String Algorithms, Sort Algorithms, Hashing
+- continue String Algo, Search Algo.
