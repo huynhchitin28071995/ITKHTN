@@ -8,7 +8,6 @@ public class RepeatedString {
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
 		long count = 0;
-		long length = 0;
 		int size = s.length();
 		for (int i = 0; i < size; i++) {
 			if (s.charAt(i) == 'a')
