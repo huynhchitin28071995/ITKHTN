@@ -14,8 +14,8 @@ public class Test {
 			wd.setHumidity(sc.nextFloat());
 			System.out.println("Please insert Temperature: ");
 			wd.setTemperature(sc.nextFloat());
-			sc.close();
 		}
+//		sc.close();
 
 	}
 }
